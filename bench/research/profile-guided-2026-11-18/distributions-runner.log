@@ -1,0 +1,54 @@
+Starting round-1-mixed-lengths-baseline
+Completed round-1-mixed-lengths-baseline: 1.877385 s/op
+Starting round-1-mixed-lengths-combined-order
+Completed round-1-mixed-lengths-combined-order: 1.850329 s/op
+Starting round-1-mixed-lengths-branchless
+Completed round-1-mixed-lengths-branchless: 1.884501 s/op
+Starting round-1-all-country-match-combined-order
+Completed round-1-all-country-match-combined-order: 1.465089 s/op
+Starting round-1-all-country-match-branchless
+Completed round-1-all-country-match-branchless: 1.471860 s/op
+Starting round-1-all-country-match-baseline
+Completed round-1-all-country-match-baseline: 1.599175 s/op
+Starting round-1-no-age-match-branchless
+Completed round-1-no-age-match-branchless: 1.402587 s/op
+Starting round-1-no-age-match-baseline
+Completed round-1-no-age-match-baseline: 1.723318 s/op
+Starting round-1-no-age-match-combined-order
+Completed round-1-no-age-match-combined-order: 1.420010 s/op
+Starting round-2-mixed-lengths-combined-order
+Completed round-2-mixed-lengths-combined-order: 1.905097 s/op
+Starting round-2-mixed-lengths-branchless
+Completed round-2-mixed-lengths-branchless: 1.949606 s/op
+Starting round-2-mixed-lengths-baseline
+Completed round-2-mixed-lengths-baseline: 1.942271 s/op
+Starting round-2-all-country-match-branchless
+Completed round-2-all-country-match-branchless: 1.446853 s/op
+Starting round-2-all-country-match-baseline
+Completed round-2-all-country-match-baseline: 1.600386 s/op
+Starting round-2-all-country-match-combined-order
+Completed round-2-all-country-match-combined-order: 1.467934 s/op
+Starting round-2-no-age-match-baseline
+Completed round-2-no-age-match-baseline: 1.674092 s/op
+Starting round-2-no-age-match-combined-order
+Completed round-2-no-age-match-combined-order: 1.446133 s/op
+Starting round-2-no-age-match-branchless
+Completed round-2-no-age-match-branchless: 1.412288 s/op
+Starting round-3-mixed-lengths-branchless
+Completed round-3-mixed-lengths-branchless: 1.928812 s/op
+Starting round-3-mixed-lengths-baseline
+Completed round-3-mixed-lengths-baseline: 1.881714 s/op
+Starting round-3-mixed-lengths-combined-order
+Completed round-3-mixed-lengths-combined-order: 1.938695 s/op
+Starting round-3-all-country-match-baseline
+Completed round-3-all-country-match-baseline: 1.614090 s/op
+Starting round-3-all-country-match-combined-order
+Completed round-3-all-country-match-combined-order: 1.455728 s/op
+Starting round-3-all-country-match-branchless
+Completed round-3-all-country-match-branchless: 1.480430 s/op
+Starting round-3-no-age-match-combined-order
+Completed round-3-no-age-match-combined-order: 1.411595 s/op
+Starting round-3-no-age-match-branchless
+Completed round-3-no-age-match-branchless: 1.438078 s/op
+Starting round-3-no-age-match-baseline
+Completed round-3-no-age-match-baseline: 1.692774 s/op

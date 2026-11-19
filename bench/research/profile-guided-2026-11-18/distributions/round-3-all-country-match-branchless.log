@@ -1,0 +1,98 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 3 iterations, 1 s each
+# Measurement: 3 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: konsume.bench.DistributionBench.process
+# Parameters: (shape = all-country-match)
+
+# Run progress: 0.00% complete, ETA 00:00:06
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Distribution: all-country-match, 10000 records, 6152 retained/pass
+1.520 s/op
+# Warmup Iteration   2: 1.434 s/op
+# Warmup Iteration   3: 1.405 s/op
+Iteration   1: 1.486 s/op
+                 gc.alloc.rate:      1265.253 MB/sec
+                 gc.alloc.rate.norm: 1972087000.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            2.000 ms
+
+Iteration   2: 1.483 s/op
+                 gc.alloc.rate:      1267.958 MB/sec
+                 gc.alloc.rate.norm: 1972087032.000 B/op
+                 gc.count:           2.000 counts
+                 gc.time:            4.000 ms
+
+Iteration   3: 1.472 s/op
+                 gc.alloc.rate:      1277.704 MB/sec
+                 gc.alloc.rate.norm: 1972087000.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            1.000 ms
+
+
+
+Result "konsume.bench.DistributionBench.process":
+  1.480 ±(99.9%) 0.139 s/op [Average]
+  (min, avg, max) = (1.472, 1.480, 1.486), stdev = 0.008
+  CI (99.9%): [1.342, 1.619] (assumes normal distribution)
+
+Secondary result "konsume.bench.DistributionBench.process:gc.alloc.rate":
+  1270.305 ±(99.9%) 119.474 MB/sec [Average]
+  (min, avg, max) = (1265.253, 1270.305, 1277.704), stdev = 6.549
+  CI (99.9%): [1150.831, 1389.779] (assumes normal distribution)
+
+Secondary result "konsume.bench.DistributionBench.process:gc.alloc.rate.norm":
+  1972087010.667 ±(99.9%) 337.057 B/op [Average]
+  (min, avg, max) = (1972087000.000, 1972087010.667, 1972087032.000), stdev = 18.475
+  CI (99.9%): [1972086673.610, 1972087347.723] (assumes normal distribution)
+
+Secondary result "konsume.bench.DistributionBench.process:gc.count":
+  4.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (1.000, 1.333, 2.000), stdev = 0.577
+  CI (99.9%): [4.000, 4.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.DistributionBench.process:gc.time":
+  7.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (1.000, 2.333, 4.000), stdev = 1.528
+  CI (99.9%): [7.000, 7.000] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:09
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                               (shape)  Mode  Cnt           Score     Error   Units
+DistributionBench.process                     all-country-match  avgt    3           1.480 ±   0.139    s/op
+DistributionBench.process:gc.alloc.rate       all-country-match  avgt    3        1270.305 ± 119.474  MB/sec
+DistributionBench.process:gc.alloc.rate.norm  all-country-match  avgt    3  1972087010.667 ± 337.057    B/op
+DistributionBench.process:gc.count            all-country-match  avgt    3           4.000            counts
+DistributionBench.process:gc.time             all-country-match  avgt    3           7.000                ms
+
+Benchmark result is saved to /Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/distributions/round-3-all-country-match-branchless.json
