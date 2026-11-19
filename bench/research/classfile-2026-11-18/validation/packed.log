@@ -1,0 +1,59 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/sbt-launch/1.12.6/sbt-launch-1.12.6.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.scalasbt.ipcsocket.NativeLoader in an unnamed module (file:/Users/sderosiaux/.sbt/boot/scala-2.12.21/org.scala-sbt/sbt/1.13.1/ipcsocket-1.8.1.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[info] welcome to sbt 1.13.1 (Eclipse Adoptium Java 25.0.3)
+[info] loading settings for project packed-build from plugins.sbt...
+[info] loading project definition from /Users/sderosiaux/code/personal/konsume-experiments/packed/project
+[info] loading settings for project root from build.sbt...
+[info] set current project to root (in build file:/Users/sderosiaux/code/personal/konsume-experiments/packed/)
+[info] compiling 6 Java sources to /Users/sderosiaux/code/personal/konsume-experiments/packed/classfile/target/classes ...
+[info] done compiling
+[info] compiling 1 Java source to /Users/sderosiaux/code/personal/konsume-experiments/packed/classfile/target/test-classes ...
+[info] done compiling
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Passed: Total 13, Failed 0, Errors 0, Passed 13
+[success] Total time: 1 s, completed Nov 18, 2026, 9:33:50 PM
+[info] compiling 17 Scala sources to /Users/sderosiaux/code/personal/konsume-experiments/packed/core/target/scala-3.8.4/classes ...
+[info] done compiling
+[info] compiling 12 Scala sources and 10 Java sources to /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/classes ...
+[info] done compiling
+[info] compiling 5 Scala sources to /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/test-classes ...
+[info] done compiling
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/3.8.4/scala-library-3.8.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Test run konsume.bench.OptimizationSuite started
+konsume.bench.OptimizationSuite: finished 0.176s
+Test run konsume.bench.OptimizationSuite finished: 0 failed, 0 ignored, 6 total 0.186s
+Test run konsume.bench.ClassfileDifferentialSuite started
+konsume.bench.ClassfileDifferentialSuite: finished 1.22s
+Test run konsume.bench.ClassfileDifferentialSuite finished: 0 failed, 0 ignored, 6 total 1.22s
+Test run konsume.bench.ScalingDataSuite started
+konsume.bench.ScalingDataSuite: finished 0.025s
+Test run konsume.bench.ScalingDataSuite finished: 0 failed, 0 ignored, 2 total 0.025s
+Test run konsume.bench.InvestigationSuite started
+konsume.bench.InvestigationSuite: finished 0.03s
+Test run konsume.bench.InvestigationSuite finished: 0 failed, 0 ignored, 13 total 0.03s
+Test run konsume.classfile.CursorDifferentialSuite started
+konsume.classfile.CursorDifferentialSuite: finished 0.025s
+Test run konsume.classfile.CursorDifferentialSuite finished: 0 failed, 0 ignored, 3 total 0.025s
+[info] Passed: Total 30, Failed 0, Errors 0, Passed 30
+[success] Total time: 7 s, completed Nov 18, 2026, 9:33:56 PM
+[info] running (fork) org.openjdk.jmh.generators.bytecode.JmhBytecodeGenerator /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/classes /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/src_managed/jmh /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/resource_managed/jmh default
+[info] Processing 54 classes from /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/classes with "reflection" generator
+[info] Writing out Java source to /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/src_managed/jmh and resources to /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/resource_managed/jmh
+[info] compiling 61 Java sources to /Users/sderosiaux/code/personal/konsume-experiments/packed/bench/target/scala-3.8.4/classes ...
+[info] done compiling
+[success] Total time: 1 s, completed Nov 18, 2026, 9:33:57 PM

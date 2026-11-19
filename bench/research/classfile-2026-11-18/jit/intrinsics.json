@@ -1,0 +1,98 @@
+[
+  {
+    "version": "baseline",
+    "compile_id": "1847",
+    "nmethod": {
+      "compile_id": "1847",
+      "compiler": "c2",
+      "level": "4",
+      "entry": "0x0000000127214b80",
+      "size": "4192",
+      "address": "0x0000000127214a88",
+      "relocation_offset": "29182464376",
+      "insts_offset": "248",
+      "stub_offset": "4040",
+      "scopes_data_offset": "29176457776",
+      "scopes_pcs_offset": "29176456912",
+      "dependencies_offset": "29176456568",
+      "handler_table_offset": "29176456792",
+      "nul_chk_table_offset": "29176456720",
+      "oops_offset": "4152",
+      "metadata_offset": "29182464680",
+      "method": "konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;",
+      "bytes": "79",
+      "count": "68",
+      "backedge_count": "611683",
+      "iicount": "68",
+      "stamp": "0.314"
+    },
+    "intrinsics": []
+  },
+  {
+    "version": "numeric",
+    "compile_id": "1843",
+    "nmethod": {
+      "compile_id": "1843",
+      "compiler": "c2",
+      "level": "4",
+      "entry": "0x000000011839f140",
+      "size": "4144",
+      "address": "0x000000011839f048",
+      "relocation_offset": "41029628600",
+      "insts_offset": "248",
+      "stub_offset": "3992",
+      "scopes_data_offset": "41032668272",
+      "scopes_pcs_offset": "41032667408",
+      "dependencies_offset": "41032667064",
+      "handler_table_offset": "41032667288",
+      "nul_chk_table_offset": "41032667216",
+      "oops_offset": "4104",
+      "metadata_offset": "41029628904",
+      "method": "konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;",
+      "bytes": "79",
+      "count": "66",
+      "backedge_count": "601310",
+      "iicount": "66",
+      "stamp": "0.305"
+    },
+    "intrinsics": []
+  },
+  {
+    "version": "packed",
+    "compile_id": "1851",
+    "nmethod": {
+      "compile_id": "1851",
+      "compiler": "c2",
+      "level": "4",
+      "entry": "0x00000001199d5480",
+      "size": "4160",
+      "address": "0x00000001199d5388",
+      "relocation_offset": "47781185656",
+      "insts_offset": "248",
+      "stub_offset": "3984",
+      "scopes_data_offset": "47760027960",
+      "scopes_pcs_offset": "47760027112",
+      "dependencies_offset": "47760026744",
+      "handler_table_offset": "47760026992",
+      "nul_chk_table_offset": "47760026920",
+      "oops_offset": "4096",
+      "metadata_offset": "47781185960",
+      "method": "konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;",
+      "bytes": "79",
+      "count": "67",
+      "backedge_count": "610020",
+      "iicount": "67",
+      "stamp": "0.316"
+    },
+    "intrinsics": [
+      {
+        "id": "_Preconditions_checkIndex",
+        "nodes": "27"
+      },
+      {
+        "id": "_getShortUnaligned",
+        "nodes": "5"
+      }
+    ]
+  }
+]

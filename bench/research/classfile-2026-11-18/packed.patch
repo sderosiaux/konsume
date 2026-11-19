@@ -1,0 +1,76 @@
+From 361f15a424738377d19f2b7da6c5aa4bd171e15a Mon Sep 17 00:00:00 2001
+From: Stephane Derosiaux <sderosiaux@conduktor.io>
+Date: Wed, 18 Nov 2026 21:32:57 -0500
+Subject: [PATCH] Experiment: compare short UTF-8 literals using unaligned
+ packed loads
+
+---
+ .../konsume/classfile/AvroFilterCompiler.java  | 17 +++++++++++++++--
+ .../java/konsume/classfile/LiteralBytes.java   | 18 ++++++++++++++++++
+ 2 files changed, 33 insertions(+), 2 deletions(-)
+ create mode 100644 classfile/src/main/java/konsume/classfile/LiteralBytes.java
+
+diff --git a/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java b/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java
+index 5ee24cb..0fd663a 100644
+--- a/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java
++++ b/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java
+@@ -28,6 +28,7 @@ public final class AvroFilterCompiler {
+     private static final ClassDesc GENERATED = ClassDesc.of("konsume.classfile.CompiledAvroFilter");
+     private static final ClassDesc FILTER = ClassDesc.of(AvroFilter.class.getName());
+     private static final ClassDesc CURSOR = ClassDesc.of(AvroCursor.class.getName());
++    private static final ClassDesc LITERAL_BYTES = ClassDesc.of(LiteralBytes.class.getName());
+     private static final ClassDesc SCHEMA = ClassDesc.of(Schema.class.getName());
+     private static final ClassDesc BYTES = CD_byte.arrayType();
+     private static final ClassDesc LITERALS = BYTES.arrayType();
+@@ -216,10 +217,22 @@ public final class AvroFilterCompiler {
+                 // The reading plan has already validated the complete string slice.
+                 if (literal.length <= 8) {
+                     c.iload(value.second()).loadConstant(literal.length).if_icmpne(no);
+-                    for (int i = 0; i < literal.length; i++) {
++                    for (int i = 0; i < literal.length;) {
++                        int width = Integer.highestOneBit(literal.length - i);
++                        long packed = 0;
++                        for (int j = 0; j < width; j++) packed |= (literal[i + j] & 255L) << (8 * j);
+                         c.aload(1).iload(value.first());
+                         if (i != 0) c.loadConstant(i).iadd();
+-                        c.baload().loadConstant((int) literal[i]).if_icmpne(no);
++                        switch (width) {
++                            case 8 -> c.invokestatic(LITERAL_BYTES, "read64", MethodTypeDesc.of(CD_long, BYTES, CD_int))
++                                .loadConstant(packed).lcmp().ifne(no);
++                            case 4 -> c.invokestatic(LITERAL_BYTES, "read32", MethodTypeDesc.of(CD_int, BYTES, CD_int))
++                                .loadConstant((int) packed).if_icmpne(no);
++                            case 2 -> c.invokestatic(LITERAL_BYTES, "read16", MethodTypeDesc.of(CD_int, BYTES, CD_int))
++                                .loadConstant((int) (short) packed).if_icmpne(no);
++                            default -> c.baload().loadConstant((int) literal[i]).if_icmpne(no);
++                        }
++                        i += width;
+                     }
+                     c.goto_(yes);
+                     break;
+diff --git a/classfile/src/main/java/konsume/classfile/LiteralBytes.java b/classfile/src/main/java/konsume/classfile/LiteralBytes.java
+new file mode 100644
+index 0000000..ebc1aa2
+--- /dev/null
++++ b/classfile/src/main/java/konsume/classfile/LiteralBytes.java
+@@ -0,0 +1,18 @@
++package konsume.classfile;
++
++import java.lang.invoke.MethodHandles;
++import java.lang.invoke.VarHandle;
++import java.nio.ByteOrder;
++
++/** Plain, unaligned loads used only after the generated reading plan validates the slice. */
++final class LiteralBytes {
++    private static final VarHandle SHORTS = MethodHandles.byteArrayViewVarHandle(short[].class, ByteOrder.LITTLE_ENDIAN);
++    private static final VarHandle INTS = MethodHandles.byteArrayViewVarHandle(int[].class, ByteOrder.LITTLE_ENDIAN);
++    private static final VarHandle LONGS = MethodHandles.byteArrayViewVarHandle(long[].class, ByteOrder.LITTLE_ENDIAN);
++
++    private LiteralBytes() { }
++
++    static int read16(byte[] bytes, int offset) { return (short) SHORTS.get(bytes, offset); }
++    static int read32(byte[] bytes, int offset) { return (int) INTS.get(bytes, offset); }
++    static long read64(byte[] bytes, int offset) { return (long) LONGS.get(bytes, offset); }
++}
+-- 
+2.54.0 (Apple Git-157)
+

@@ -1,0 +1,35 @@
+From 61fea9986089423391aef12c8f288c699ea1e6b9 Mon Sep 17 00:00:00 2001
+From: Stephane Derosiaux <sderosiaux@conduktor.io>
+Date: Wed, 18 Nov 2026 21:32:57 -0500
+Subject: [PATCH] Experiment: compare exact integral thresholds without
+ converting to double
+
+---
+ .../java/konsume/classfile/AvroFilterCompiler.java    | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java b/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java
+index 5ee24cb..d238e41 100644
+--- a/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java
++++ b/classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java
+@@ -196,7 +196,16 @@ public final class AvroFilterCompiler {
+     private static void emitFilter(CodeBuilder c, Filter filter, Map<String, Local> values, List<byte[]> literals, Label yes, Label no) {
+         switch (filter) {
+             case Filter.NumberComparison f -> {
+-                c.lload(values.get(f.path()).first()).l2d().loadConstant(f.value()).dcmpg();
++                double threshold = f.value();
++                // Strictly inside +/-2^53, integral thresholds order every long just
++                // like its double conversion. At the boundary, adjacent longs can
++                // round onto the threshold, so preserve jq's double semantics there.
++                c.lload(values.get(f.path()).first());
++                if (threshold == Math.rint(threshold) && threshold > -0x1.0p53 && threshold < 0x1.0p53) {
++                    c.loadConstant((long) threshold).lcmp();
++                } else {
++                    c.l2d().loadConstant(threshold).dcmpg();
++                }
+                 switch (f.comparison()) {
+                     case EQ -> c.ifeq(yes);
+                     case NE -> c.ifne(yes);
+-- 
+2.54.0 (Apple Git-157)
+

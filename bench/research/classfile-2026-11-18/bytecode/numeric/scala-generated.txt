@@ -1,0 +1,33 @@
+{
+  val c: io.circe.Json = io.circe.Json.fromLong(30L)
+  val `c₂`: io.circe.Json = io.circe.Json.fromString("FR")
+  val u: scala.Array[scala.Byte] = "FR".getBytes(java.nio.charset.StandardCharsets.UTF_8)
+  val `u₂`: scala.Array[scala.Byte] = "user".getBytes(java.nio.charset.StandardCharsets.UTF_8)
+  val `u₃`: scala.Array[scala.Byte] = "age".getBytes(java.nio.charset.StandardCharsets.UTF_8)
+  val `u₄`: scala.Array[scala.Byte] = "country".getBytes(java.nio.charset.StandardCharsets.UTF_8)
+  ((schemaArray: scala.Array[org.apache.avro.Schema]) => ((record: konsume.Record[scala.Any, scala.Array[scala.Byte]], out: scala.collection.mutable.ArrayBuffer[konsume.Record[scala.Any, scala.Array[scala.Byte]]]) => {
+    val bytes: scala.Array[scala.Byte] = record.value
+    val cur: konsume.format.AvroCursor = new konsume.format.AvroCursor(bytes, konsume.format.Confluent.HeaderSize)
+    var s: scala.Long = 0L
+    var `s₂`: scala.Int = 0
+    var `s₃`: scala.Int = 0
+    cur.skip(cur.readLength())
+    s = cur.readLong()
+    val n: scala.Int = cur.readLength()
+    `s₂` = cur.pos
+    `s₃` = n
+    cur.skip(n)
+    try if (konsume.jq.Runtime.compareDoubles(s.toDouble, 30.0).>(0).&&({
+      var res: scala.Boolean = false
+      res = konsume.jq.Runtime.utf8Equals(bytes, `s₂`, `s₃`, u)
+
+      (res: scala.Boolean)
+    })) {
+      out.+=(record)
+      ()
+    } else () catch {
+      case _: konsume.jq.JqError =>
+        ()
+    }
+  }))
+}

@@ -1,0 +1,34 @@
+baseline.xml.gz SHA256 8a31474034a295e4d7c6821c7d562d5023eeb42010f081ca890bed88d658cc74
+  C2 #1847 at 0.314s: konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;
+    konsume.Record.value: inline_success (accessor)
+    konsume.classfile.CompiledAvroFilter/0x0000008001170c00.test: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.<init>: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLength: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLong: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.skip: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.position: inline_success (accessor)
+    Eliminated allocations: konsume.classfile.AvroCursor
+
+numeric.xml.gz SHA256 890b8ece70460707267985c126cd83be81aff2d53746b616a45ca7e64108e90e
+  C2 #1843 at 0.305s: konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;
+    konsume.Record.value: inline_success (accessor)
+    konsume.classfile.CompiledAvroFilter/0x0000000f0116cc00.test: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.<init>: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLength: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLong: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.skip: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.position: inline_success (accessor)
+    Eliminated allocations: konsume.classfile.AvroCursor
+
+packed.xml.gz SHA256 d4262b4e5a852d7fffdd8432de498e41dcd0f79f06a6171a6bc786a19267dd3f
+  C2 #1851 at 0.316s: konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;
+    konsume.Record.value: inline_success (accessor)
+    konsume.classfile.CompiledAvroFilter/0x00007ff00116cc00.test: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.<init>: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLength: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLong: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.skip: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.position: inline_success (accessor)
+    konsume.classfile.LiteralBytes.read16: inline_success (inline (hot))
+    Eliminated allocations: konsume.classfile.AvroCursor
+
