@@ -28,6 +28,7 @@ public final class AvroFilterCompiler {
     private static final ClassDesc GENERATED = ClassDesc.of("konsume.classfile.CompiledAvroFilter");
     private static final ClassDesc FILTER = ClassDesc.of(AvroFilter.class.getName());
     private static final ClassDesc CURSOR = ClassDesc.of(AvroCursor.class.getName());
+    private static final ClassDesc LITERAL_BYTES = ClassDesc.of(LiteralBytes.class.getName());
     private static final ClassDesc SCHEMA = ClassDesc.of(Schema.class.getName());
     private static final ClassDesc BYTES = CD_byte.arrayType();
     private static final ClassDesc LITERALS = BYTES.arrayType();
@@ -216,10 +217,22 @@ public final class AvroFilterCompiler {
                 // The reading plan has already validated the complete string slice.
                 if (literal.length <= 8) {
                     c.iload(value.second()).loadConstant(literal.length).if_icmpne(no);
-                    for (int i = 0; i < literal.length; i++) {
+                    for (int i = 0; i < literal.length;) {
+                        int width = Integer.highestOneBit(literal.length - i);
+                        long packed = 0;
+                        for (int j = 0; j < width; j++) packed |= (literal[i + j] & 255L) << (8 * j);
                         c.aload(1).iload(value.first());
                         if (i != 0) c.loadConstant(i).iadd();
-                        c.baload().loadConstant((int) literal[i]).if_icmpne(no);
+                        switch (width) {
+                            case 8 -> c.invokestatic(LITERAL_BYTES, "read64", MethodTypeDesc.of(CD_long, BYTES, CD_int))
+                                .loadConstant(packed).lcmp().ifne(no);
+                            case 4 -> c.invokestatic(LITERAL_BYTES, "read32", MethodTypeDesc.of(CD_int, BYTES, CD_int))
+                                .loadConstant((int) packed).if_icmpne(no);
+                            case 2 -> c.invokestatic(LITERAL_BYTES, "read16", MethodTypeDesc.of(CD_int, BYTES, CD_int))
+                                .loadConstant((int) (short) packed).if_icmpne(no);
+                            default -> c.baload().loadConstant((int) literal[i]).if_icmpne(no);
+                        }
+                        i += width;
                     }
                     c.goto_(yes);
                     break;
