@@ -1,0 +1,14 @@
+{
+  "baseline_source_commit": "a2da570",
+  "scope": "Profile-guided production optimizations. First isolate string cursor fusion, short-length decoding and pure predicate ordering. Follow the observed winners with combined or revised candidates and independent confirmation. Preserve failed attempts.",
+  "profile_evidence": "profiles/baseline/{10000,1000000}: async-profiler CPU + allocation, 6 warmup and 5 measured invocations. Timing from profiled runs is excluded from comparisons.",
+  "benchmark": "konsume.bench.OptimizationBench.process",
+  "engine": "optimized",
+  "records_per_invocation": 300000000,
+  "screen": {"sizes": [10000, 1000000], "forks": 3, "warmup": 6, "iterations": 5},
+  "confirmation": {"sizes": [10000, 100000, 1000000], "forks": 5, "warmup": 6, "iterations": 5},
+  "metric": {"name": "seconds_per_300m", "unit": "seconds", "direction": "minimize", "role": "objective", "min_repetitions": 3, "minimum_improvement": 0.02, "max_cv": 0.15},
+  "evaluator": {"repository": "https://github.com/sderosiaux/claudecode-autoresearch", "commit": "c5fca23f7beab20d4eed65d796747116e458c51c", "module": "product/autoresearch/measurement.py"},
+  "decision": "Select a candidate with a resolved useful gain at either screened pool and no resolved regression at the other. Confirm using fresh runs on all three pools. Retain only independently confirmed improvements with preserved correctness and no resolved regression. Explicitly report inconclusive cases. Profiling may motivate additional hypotheses without rewriting completed comparisons. Do not claim gains outside measured filters or distributions.",
+  "controls": ["One JVM mean per independent sample", "Rotate candidate order across rounds and pools", "Same protected benchmark, core sources, build and correctness tests across versions", "Check outputs, offsets and original record identities", "No new unvalidated early return before reading required fields", "Preserve malformed-input and double comparison semantics", "No concurrent builds, tests or performance measurements", "Profiled timing is never mixed with unprofiled timing", "Each measured invocation at least one second", "All code, results and flame graphs saved outside /tmp", "No remote publication"]
+}

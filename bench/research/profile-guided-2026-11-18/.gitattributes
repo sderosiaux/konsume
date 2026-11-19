@@ -1,0 +1,7 @@
+# Preserve profiler/JMH output and git-format-patch trailers verbatim.
+*.json -whitespace
+*.log -whitespace
+*.patch -whitespace
+*.collapsed -whitespace
+*.html -whitespace
+*.txt -whitespace

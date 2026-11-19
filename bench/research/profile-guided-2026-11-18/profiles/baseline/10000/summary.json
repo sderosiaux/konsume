@@ -1,0 +1,235 @@
+{
+  "pool": 10000,
+  "all_samples": 7323,
+  "java_batch_samples": 7296,
+  "worker_fraction": 0.9963129864809505,
+  "self_top": [
+    {
+      "frame": "konsume/classfile/AvroCursor.readLength:42_[i]",
+      "samples": 907,
+      "worker_percent": 12.431469298245615
+    },
+    {
+      "frame": "konsume/classfile/CompiledAvroFilter.test_[i]",
+      "samples": 893,
+      "worker_percent": 12.239583333333334
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.skip:47_[i]",
+      "samples": 869,
+      "worker_percent": 11.91063596491228
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:26_[i]",
+      "samples": 668,
+      "worker_percent": 9.155701754385966
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:37_[i]",
+      "samples": 596,
+      "worker_percent": 8.168859649122806
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:25_[i]",
+      "samples": 591,
+      "worker_percent": 8.100328947368421
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.skip:48_[i]",
+      "samples": 406,
+      "worker_percent": 5.56469298245614
+    },
+    {
+      "frame": "konsume/bench/OptimizationBench.javaBatch:69_[j]",
+      "samples": 357,
+      "worker_percent": 4.8930921052631575
+    },
+    {
+      "frame": "scala/collection/immutable/NewVectorIterator.hasNext:2264_[i]",
+      "samples": 347,
+      "worker_percent": 4.756030701754386
+    },
+    {
+      "frame": "konsume/bench/OptimizationBench.javaBatch:68_[j]",
+      "samples": 317,
+      "worker_percent": 4.34484649122807
+    },
+    {
+      "frame": "konsume/Record.value:10_[i]",
+      "samples": 282,
+      "worker_percent": 3.8651315789473686
+    },
+    {
+      "frame": "scala/collection/immutable/NewVectorIterator.next:2269_[i]",
+      "samples": 221,
+      "worker_percent": 3.0290570175438596
+    },
+    {
+      "frame": "scala/collection/immutable/NewVectorIterator.next:2268_[i]",
+      "samples": 178,
+      "worker_percent": 2.4396929824561404
+    },
+    {
+      "frame": "scala/collection/mutable/ArrayBuffer.addOne:145_[i]",
+      "samples": 166,
+      "worker_percent": 2.275219298245614
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:35_[i]",
+      "samples": 148,
+      "worker_percent": 2.0285087719298245
+    },
+    {
+      "frame": "scala/collection/immutable/NewVectorIterator.advance:2302_[j]",
+      "samples": 46,
+      "worker_percent": 0.6304824561403509
+    },
+    {
+      "frame": "scala/collection/immutable/NewVectorIterator.advance:2297_[j]",
+      "samples": 44,
+      "worker_percent": 0.6030701754385965
+    },
+    {
+      "frame": "scala/collection/mutable/ArrayBuffer.addOne:143_[i]",
+      "samples": 42,
+      "worker_percent": 0.5756578947368421
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:31_[i]",
+      "samples": 40,
+      "worker_percent": 0.5482456140350878
+    },
+    {
+      "frame": "copy_byte_f",
+      "samples": 31,
+      "worker_percent": 0.42489035087719296
+    }
+  ],
+  "inclusive_top": [
+    {
+      "frame": "java/lang/Thread.run:1474_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/lang/invoke/LambdaForm$MH.invoke_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "org/openjdk/jmh/runner/BenchmarkHandler$BenchmarkTask.call:527_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "jdk/internal/reflect/DirectMethodHandleAccessor.invokeImpl:156_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "konsume/bench/jmh_generated/OptimizationBench_process_jmhTest.process_ss_jmhStub:326_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/util/concurrent/FutureTask.run:328_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "konsume/bench/OptimizationBench.process:85_[j]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "konsume/bench/jmh_generated/OptimizationBench_process_jmhTest.process_SingleShotTime:305_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "org/openjdk/jmh/runner/BenchmarkHandler$BenchmarkTask.call:504_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "jdk/internal/reflect/DirectMethodHandleAccessor.invoke:104_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/lang/invoke/LambdaForm$MH.invokeExact_MT_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/lang/Thread.runWith:1487_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/util/concurrent/ThreadPoolExecutor$Worker.run:614_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/lang/reflect/Method.invoke:565_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/util/concurrent/Executors$RunnableAdapter.call:545_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/util/concurrent/ThreadPoolExecutor.runWorker:1090_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "java/lang/invoke/DirectMethodHandle$Holder.invokeSpecial_[0]",
+      "samples": 7296,
+      "worker_percent": 100.0
+    },
+    {
+      "frame": "konsume/bench/OptimizationBench.javaBatch:69_[j]",
+      "samples": 6098,
+      "worker_percent": 83.58004385964912
+    },
+    {
+      "frame": "konsume/classfile/CompiledAvroFilter.test_[i]",
+      "samples": 5163,
+      "worker_percent": 70.76480263157895
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLength:41_[i]",
+      "samples": 1150,
+      "worker_percent": 15.762061403508772
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLength:42_[i]",
+      "samples": 907,
+      "worker_percent": 12.431469298245615
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.skip:47_[i]",
+      "samples": 869,
+      "worker_percent": 11.91063596491228
+    },
+    {
+      "frame": "konsume/bench/OptimizationBench.javaBatch:68_[j]",
+      "samples": 850,
+      "worker_percent": 11.650219298245615
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:26_[i]",
+      "samples": 668,
+      "worker_percent": 9.155701754385966
+    },
+    {
+      "frame": "konsume/classfile/AvroCursor.readLong:37_[i]",
+      "samples": 596,
+      "worker_percent": 8.168859649122806
+    }
+  ]
+}

@@ -36,9 +36,10 @@ def main():
     parser.add_argument("--phase", choices=["screen", "confirmation"], required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--autoresearch", type=Path, required=True)
+    parser.add_argument("--protocol", type=Path, help="Frozen protocol JSON; defaults to the first campaign")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    protocol_path = root / "bench/research/classfile-2026-11-18/protocol.json"
+    protocol_path = args.protocol.resolve() if args.protocol else root / "bench/research/classfile-2026-11-18/protocol.json"
     protocol = json.loads(protocol_path.read_text())
     settings = protocol[args.phase]
     versions = dict(item.split("=", 1) for item in args.version)
