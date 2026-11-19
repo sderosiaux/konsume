@@ -43,6 +43,13 @@ final class AvroCursor {
         return (int) n;
     }
 
+    /** Validate the length once, advance over the entire value and return its byte length. */
+    int readLengthAndSkip() {
+        int n = readLength();
+        position += n; // readLength already proved n <= limit - position.
+        return n;
+    }
+
     void skip(int n) {
         if (n < 0 || n > limit - position) throw new MalformedAvroException("Truncated value");
         position += n;
@@ -65,7 +72,7 @@ final class AvroCursor {
             case INT, LONG, ENUM -> skipVarint();
             case FLOAT -> skip(4);
             case DOUBLE -> skip(8);
-            case STRING, BYTES -> skip(readLength());
+            case STRING, BYTES -> readLengthAndSkip();
             case FIXED -> skip(schema.getFixedSize());
             case RECORD -> {
                 for (Schema.Field field : schema.getFields()) skipValue(field.schema(), depth + 1);
@@ -82,10 +89,10 @@ final class AvroCursor {
                 while ((count = readLong()) != 0) {
                     if (count < 0) {
                         if (count == Long.MIN_VALUE) throw new MalformedAvroException("Invalid block count");
-                        skip(readLength()); // Negative count is followed by the encoded block's byte length.
+                        readLengthAndSkip(); // Negative count is followed by the encoded block's byte length.
                     } else {
                         for (long i = 0; i < count; i++) {
-                            if (schema.getType() == Schema.Type.MAP) skip(readLength());
+                            if (schema.getType() == Schema.Type.MAP) readLengthAndSkip();
                             skipValue(schema.getType() == Schema.Type.MAP ? schema.getValueType() : schema.getElementType(), depth + 1);
                         }
                     }

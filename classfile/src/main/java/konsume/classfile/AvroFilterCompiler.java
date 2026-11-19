@@ -83,9 +83,9 @@ public final class AvroFilterCompiler {
                             case ReadString read -> {
                                 int length = c.allocateLocal(TypeKind.INT);
                                 int offset = c.allocateLocal(TypeKind.INT);
-                                c.aload(cursor).invokevirtual(CURSOR, "readLength", MethodTypeDesc.of(CD_int)).istore(length)
-                                    .aload(cursor).invokevirtual(CURSOR, "position", MethodTypeDesc.of(CD_int)).istore(offset)
-                                    .aload(cursor).iload(length).invokevirtual(CURSOR, "skip", MethodTypeDesc.of(CD_void, CD_int));
+                                c.aload(cursor).invokevirtual(CURSOR, "readLengthAndSkip", MethodTypeDesc.of(CD_int)).istore(length)
+                                    .aload(cursor).invokevirtual(CURSOR, "position", MethodTypeDesc.of(CD_int))
+                                    .iload(length).isub().istore(offset);
                                 values.put(read.path(), new Local(offset, length));
                             }
                             case Skip skip -> emitSkip(c, cursor, skip.schema(), skippedSchemas);
@@ -181,9 +181,8 @@ public final class AvroFilterCompiler {
                 };
                 c.aload(cursor).loadConstant(size).invokevirtual(CURSOR, "skip", MethodTypeDesc.of(CD_void, CD_int));
             }
-            case STRING, BYTES -> c.aload(cursor).aload(cursor)
-                .invokevirtual(CURSOR, "readLength", MethodTypeDesc.of(CD_int))
-                .invokevirtual(CURSOR, "skip", MethodTypeDesc.of(CD_void, CD_int));
+            case STRING, BYTES -> c.aload(cursor)
+                .invokevirtual(CURSOR, "readLengthAndSkip", MethodTypeDesc.of(CD_int)).pop();
             default -> {
                 int index = schemas.size();
                 schemas.add(schema);
