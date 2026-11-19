@@ -1,0 +1,15 @@
+{
+  "purpose": "Check the two combined candidates on different length distributions and predicate selectivities before choosing a retained implementation.",
+  "benchmark": "konsume.bench.DistributionBench.process",
+  "shapes": ["mixed-lengths", "all-country-match", "no-age-match"],
+  "records_per_invocation": 300000000,
+  "pool_size": 10000,
+  "mode": "AverageTime",
+  "forks": 3,
+  "warmup": {"iterations": 3, "seconds_per_iteration": 1},
+  "measurement": {"iterations": 3, "seconds_per_iteration": 1},
+  "metric": {"name": "seconds_per_300m", "unit": "seconds", "direction": "minimize", "role": "objective", "min_repetitions": 3, "minimum_improvement": 0.02, "max_cv": 0.15},
+  "evaluator_commit": "c5fca23f7beab20d4eed65d796747116e458c51c",
+  "decision": "Reject a candidate with a resolved regression on a distribution guard; investigate large unexplained regressions even when intervals are inconclusive. These are separate auxiliary workloads, never pooled with the primary SingleShotTime benchmark. Primary confirmation still requires fresh JVMs on all three original pool sizes.",
+  "controls": ["Every iteration runs for at least one second; a reported average per invocation may be shorter", "One mean per independent JVM", "Rotate candidate order", "Same committed auxiliary evaluator and tests in all versions", "Full offset and original-object checks in setup, count checks on every invocation", "No simultaneous timing, builds or tests", "Original OptimizationBench and ScalingData are unchanged"]
+}
