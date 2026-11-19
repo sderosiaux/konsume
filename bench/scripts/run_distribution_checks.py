@@ -9,9 +9,9 @@ import statistics
 import subprocess
 import sys
 import time
-from run_research import git, sha, write
 
 sys.dont_write_bytecode = True
+from run_research import git, sha, write
 
 
 def main():

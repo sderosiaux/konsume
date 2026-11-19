@@ -1,0 +1,344 @@
+Starting round-1-10000-baseline
+Completed round-1-10000-baseline: 1.404843 s/op
+Starting round-1-10000-combined-order
+Completed round-1-10000-combined-order: 1.266780 s/op
+Starting round-1-10000-branchless
+Completed round-1-10000-branchless: 1.317971 s/op
+Starting round-1-1000000-combined-order
+Completed round-1-1000000-combined-order: 2.973464 s/op
+Starting round-1-1000000-branchless
+Completed round-1-1000000-branchless: 2.827258 s/op
+Starting round-1-1000000-baseline
+Completed round-1-1000000-baseline: 4.306196 s/op
+Starting round-2-10000-combined-order
+Completed round-2-10000-combined-order: 1.265944 s/op
+Starting round-2-10000-branchless
+Completed round-2-10000-branchless: 1.306719 s/op
+Starting round-2-10000-baseline
+Completed round-2-10000-baseline: 1.453896 s/op
+Starting round-2-1000000-branchless
+Completed round-2-1000000-branchless: 2.779465 s/op
+Starting round-2-1000000-baseline
+Completed round-2-1000000-baseline: 4.136993 s/op
+Starting round-2-1000000-combined-order
+Completed round-2-1000000-combined-order: 2.856891 s/op
+Starting round-3-10000-branchless
+Completed round-3-10000-branchless: 1.283858 s/op
+Starting round-3-10000-baseline
+Completed round-3-10000-baseline: 1.426362 s/op
+Starting round-3-10000-combined-order
+Completed round-3-10000-combined-order: 1.285284 s/op
+Starting round-3-1000000-baseline
+Completed round-3-1000000-baseline: 4.142690 s/op
+Starting round-3-1000000-combined-order
+Completed round-3-1000000-combined-order: 2.843069 s/op
+Starting round-3-1000000-branchless
+Completed round-3-1000000-branchless: 2.930253 s/op
+{
+  "10000": {
+    "combined-order": {
+      "baseline": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 1.4283671555333333,
+            "median": 1.4263618668,
+            "min": 1.4048431832,
+            "max": 1.4538964166,
+            "stdev": 0.024588021757082128,
+            "cv": 0.017214076690177944,
+            "count": 3,
+            "ci95": [
+              1.3672821936151378,
+              1.4894521174515287
+            ],
+            "unit": "seconds",
+            "values": [
+              1.4048431832,
+              1.4538964166,
+              1.4263618668
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 1.2726695973333333,
+            "median": 1.2667801584,
+            "min": 1.2659442168,
+            "max": 1.2852844168,
+            "stdev": 0.010932746783041148,
+            "cv": 0.008590404615580425,
+            "count": 3,
+            "ci95": [
+              1.2455089567783042,
+              1.2998302378883624
+            ],
+            "unit": "seconds",
+            "values": [
+              1.2667801584,
+              1.2659442168,
+              1.2852844168
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 1.4283671555333333,
+          "candidate": 1.2726695973333333,
+          "improvement_fraction": 0.10900387732723005,
+          "gain_ci95": [
+            0.06745195572677543,
+            0.24394316067322452
+          ],
+          "resolved_improvement": true,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [],
+      "verdict": "promising",
+      "confirmation_required": true,
+      "tradeoff": false
+    },
+    "branchless": {
+      "baseline": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 1.4283671555333333,
+            "median": 1.4263618668,
+            "min": 1.4048431832,
+            "max": 1.4538964166,
+            "stdev": 0.024588021757082128,
+            "cv": 0.017214076690177944,
+            "count": 3,
+            "ci95": [
+              1.3672821936151378,
+              1.4894521174515287
+            ],
+            "unit": "seconds",
+            "values": [
+              1.4048431832,
+              1.4538964166,
+              1.4263618668
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 1.3028492528,
+            "median": 1.3067191418,
+            "min": 1.2838578334,
+            "max": 1.3179707832,
+            "stdev": 0.017382616795769638,
+            "cv": 0.013342001584920153,
+            "count": 3,
+            "ci95": [
+              1.259664953733633,
+              1.3460335518663669
+            ],
+            "unit": "seconds",
+            "values": [
+              1.3179707832,
+              1.3067191418,
+              1.2838578334
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 1.4283671555333333,
+          "candidate": 1.3028492528,
+          "improvement_fraction": 0.08787509727249825,
+          "gain_ci95": [
+            0.021248641748770947,
+            0.22978716371789565
+          ],
+          "resolved_improvement": false,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [
+        "gain is unresolved or objectives trade off; retain raw metrics for review"
+      ],
+      "verdict": "inconclusive",
+      "confirmation_required": true
+    }
+  },
+  "1000000": {
+    "combined-order": {
+      "baseline": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 4.195292991733333,
+            "median": 4.1426901,
+            "min": 4.1369925418,
+            "max": 4.3061963334,
+            "stdev": 0.09608735055659327,
+            "cv": 0.022903609055655895,
+            "count": 3,
+            "ci95": [
+              3.956579515409066,
+              4.4340064680576
+            ],
+            "unit": "seconds",
+            "values": [
+              4.3061963334,
+              4.1369925418,
+              4.1426901
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 2.8911416889333332,
+            "median": 2.8568913834000003,
+            "min": 2.8430693,
+            "max": 2.9734643834,
+            "stdev": 0.07162773216826189,
+            "cv": 0.02477489513656055,
+            "count": 3,
+            "ci95": [
+              2.7131941771321966,
+              3.06908920073447
+            ],
+            "unit": "seconds",
+            "values": [
+              2.9734643834,
+              2.8568913834000003,
+              2.8430693
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 4.195292991733333,
+          "candidate": 2.8911416889333332,
+          "improvement_fraction": 0.3108606014811792,
+          "gain_ci95": [
+            0.8874903146745963,
+            1.7208122909254033
+          ],
+          "resolved_improvement": true,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [],
+      "verdict": "promising",
+      "confirmation_required": true,
+      "tradeoff": false
+    },
+    "branchless": {
+      "baseline": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 4.195292991733333,
+            "median": 4.1426901,
+            "min": 4.1369925418,
+            "max": 4.3061963334,
+            "stdev": 0.09608735055659327,
+            "cv": 0.022903609055655895,
+            "count": 3,
+            "ci95": [
+              3.956579515409066,
+              4.4340064680576
+            ],
+            "unit": "seconds",
+            "values": [
+              4.3061963334,
+              4.1369925418,
+              4.1426901
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 3,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 2.845658891733333,
+            "median": 2.8272581418,
+            "min": 2.7794652334,
+            "max": 2.9302533,
+            "stdev": 0.07705972330487126,
+            "cv": 0.027079747164612915,
+            "count": 3,
+            "ci95": [
+              2.654216476804246,
+              3.03710130666242
+            ],
+            "unit": "seconds",
+            "values": [
+              2.8272581418,
+              2.7794652334,
+              2.9302533
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 4.195292991733333,
+          "candidate": 2.845658891733333,
+          "improvement_fraction": 0.32170198902899105,
+          "gain_ci95": [
+            0.919478208746646,
+            1.7797899912533537
+          ],
+          "resolved_improvement": true,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [],
+      "verdict": "promising",
+      "confirmation_required": true,
+      "tradeoff": false
+    }
+  }
+}
+
