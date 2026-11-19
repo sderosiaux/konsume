@@ -245,6 +245,16 @@ public final class AvroFilterCompiler {
                     .ifne(yes).goto_(no);
             }
             case Filter.And f -> {
+                // Both values are already decoded and validated. For this bounded,
+                // pure pair, expose independent booleans to C2 so it can use condition
+                // codes and integer AND instead of a data-dependent short-circuit chain.
+                if ((f.left() instanceof Filter.NumberComparison && isShortEquality(f.right()))
+                        || (f.right() instanceof Filter.NumberComparison && isShortEquality(f.left()))) {
+                    emitBooleanValue(c, f.left(), values, literals);
+                    emitBooleanValue(c, f.right(), values, literals);
+                    c.iand().ifne(yes).goto_(no);
+                    break;
+                }
                 Label next = c.newLabel();
                 emitFilter(c, f.left(), values, literals, next, no);
                 c.labelBinding(next);
@@ -258,5 +268,17 @@ public final class AvroFilterCompiler {
             }
             case Filter.Not f -> emitFilter(c, f.operand(), values, literals, no, yes);
         }
+    }
+
+    private static boolean isShortEquality(Filter filter) {
+        return filter instanceof Filter.StringEquality s
+            && s.value().getBytes(StandardCharsets.UTF_8).length <= 8;
+    }
+
+    private static void emitBooleanValue(CodeBuilder c, Filter filter, Map<String, Local> values, List<byte[]> literals) {
+        Label yes = c.newLabel(), no = c.newLabel(), done = c.newLabel();
+        emitFilter(c, filter, values, literals, yes, no);
+        c.labelBinding(no).iconst_0().goto_(done)
+            .labelBinding(yes).iconst_1().labelBinding(done);
     }
 }
