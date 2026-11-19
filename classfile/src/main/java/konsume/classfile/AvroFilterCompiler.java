@@ -196,7 +196,16 @@ public final class AvroFilterCompiler {
     private static void emitFilter(CodeBuilder c, Filter filter, Map<String, Local> values, List<byte[]> literals, Label yes, Label no) {
         switch (filter) {
             case Filter.NumberComparison f -> {
-                c.lload(values.get(f.path()).first()).l2d().loadConstant(f.value()).dcmpg();
+                double threshold = f.value();
+                // Strictly inside +/-2^53, integral thresholds order every long just
+                // like its double conversion. At the boundary, adjacent longs can
+                // round onto the threshold, so preserve jq's double semantics there.
+                c.lload(values.get(f.path()).first());
+                if (threshold == Math.rint(threshold) && threshold > -0x1.0p53 && threshold < 0x1.0p53) {
+                    c.loadConstant((long) threshold).lcmp();
+                } else {
+                    c.l2d().loadConstant(threshold).dcmpg();
+                }
                 switch (f.comparison()) {
                     case EQ -> c.ifeq(yes);
                     case NE -> c.ifne(yes);
