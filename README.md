@@ -1,199 +1,159 @@
-# konsume
+# Java Avro filter optimizations
 
-Scala 3 library to consume Kafka topics, with record processing configured at runtime
-(a jq program for now) and compiled to bytecode at runtime with
-[multi-stage programming](https://docs.scala-lang.org/scala3/reference/metaprogramming/staging.html).
+The latest two optimizations cut processing time by **11.3–32.9%** on the measured
+filter, increasing throughput by **12.7–49.1%**. **Memory allocation is unchanged.**
 
-For now only the pure part exists: `Pipeline[K, V, K2, V2]`, a function from a batch of records
-(`Iterable[Record[K, V]]`, what a `poll` returns) to the records to emit.
+This fork records the changes, their individual benefits and the experiments that did
+not earn a place in the final implementation. The retained code is on `main`.
 
-An independent [Java Class-File API prototype](classfile/README.md) implements the Avro scalar-filter
-use case as an embeddable Java 24+ library. Its JAR has no Scala or JMH dependency; the separate
-benchmark module compares it with the staged Scala implementation.
+## Final result
 
-The optimized Java implementation is on this fork's `main` branch. Its additions and
-measured gains are summarized below; the original Scala API remains available.
+The previous version already specialized short string literals. Adding faster length
+decoding and predicate ordering produced these independently confirmed results:
 
-## Java additions and measured gains
-
-- **Embeddable Java library:** a typed filter API for nested Avro integer and string fields,
-  compiled directly to JVM bytecode. Reuse a compiled filter on raw Avro bytes, bounded slices
-  or Confluent-framed values. Java 24+ is required; Avro is the only direct production dependency.
-  See the [API, supported semantics and integration guide](classfile/README.md).
-- **Three retained optimizations:** constant byte comparisons for short string literals,
-  specialized decoding of one-byte lengths, and ordering short string equality before a numeric
-  range comparison. Required fields are still decoded and validated before evaluating the filter.
-- **Reproducible evidence:** isolated experiment branches, raw JMH measurements, CPU/allocation
-  flame graphs and JIT logs. The retained source passed **249 tests** and a separate Java
-  consumer test against the packaged JAR, without Scala or JMH on its runtime classpath.
-
-### Gains from individual changes
-
-The workload is `select(.user.age > 30 and .user.country == "FR")`. Each invocation processes
-**300 million records by replaying a pool of distinct records**, including iteration and result
-buffer construction. The percentages below mean **less elapsed time**, relative to the baseline
-of each experiment.
-
-| Retained change | 10k pool | 100k pool | 1M pool | Evidence |
-|---|---:|---:|---:|---|
-| Emit constant length/byte comparisons for literals of at most eight UTF-8 bytes, replacing the general array comparison | **17.9%** | No convincing gain | **5.3%** | [Earlier campaign: 3 JVMs per version and size](bench/results/optimization/README.md#confirmed-measurements) |
-| Decode one-byte nonnegative lengths directly; retain the full decoder for longer encodings | **11.7%** | Not measured alone | **10.6%** | [Isolated screen: 3 JVMs per version and size](bench/research/profile-guided-2026-11-18/screen-1/comparison.json) |
-| Evaluate short string equality before the numeric range comparison, after reading all required fields | Inconclusive | Not measured alone | **26.0%** | [Isolated screen: 3 JVMs per version and size](bench/research/profile-guided-2026-11-18/screen-1/comparison.json) |
-
-The first row compares against the restored Java implementation. The last two compare against
-a baseline that **already includes short-literal specialization**. Their isolated results are
-screening evidence; the independent confirmation below validates their combination. The final
-ordering rule is limited to literals of at most eight UTF-8 bytes and numeric range comparisons;
-numeric `EQ`/`NE` preserve the caller's order.
-
-These percentages are **not additive**. Separate campaigns and interacting changes do not
-establish one cumulative gain against the earliest implementation.
-
-### Independently confirmed result
-
-The latest confirmation compares the previous Java implementation, with short literals already
-specialized, against the retained **length-decoder + predicate-ordering** combination.
-Throughput increase is derived as `before / after - 1`; time reduction is `1 - after / before`.
-
-| Distinct records in the pool | Before, s / 300M records | After, s / 300M records | Less time | More records/second |
+| Distinct records | Before | After | Processing time | Throughput |
 |---|---:|---:|---:|---:|
-| 10,000 | 1.423970 | 1.262957 | **11.3%** | **+12.7%** |
-| 100,000 | 3.171451 | 2.185744 | **31.1%** | **+45.1%** |
-| 1,000,000 | 4.162269 | 2.791413 | **32.9%** | **+49.1%** |
+| 10,000 | 1.423970 s | 1.262957 s | **−11.3%** | **+12.7%** |
+| 100,000 | 3.171451 s | 2.185744 s | **−31.1%** | **+45.1%** |
+| 1,000,000 | 4.162269 s | 2.791413 s | **−32.9%** | **+49.1%** |
 
-This is a fresh campaign of **30 JVMs and 150 measured invocations**: five JVMs per version and
-size, each with six warmups and five measurements. All three gains clear the predeclared 2%
-useful-improvement threshold using conservative 95% intervals from
-[the autoresearch evaluator](https://github.com/sderosiaux/claudecode-autoresearch/tree/c5fca23f7beab20d4eed65d796747116e458c51c).
-Allocation per record is unchanged. Profiling runs are separate from these measurements.
+Every time in this README is for **300 million record evaluations**, replaying the
+stated pool of distinct records. The filter is `age > 30 && country == "FR"` over raw
+Avro bytes. Timings include iteration and creation of the output buffers.
 
-Measurements use an Apple M4 Max, Temurin 25.0.3, one thread and a 2 GiB heap. They measure this
-in-memory filter and caller, not Kafka end-to-end throughput. In a separate guard with mixed
-short and long strings, the gain remains inconclusive. Integer-only comparisons, packed UTF-8
-loads and fused length/skip variants did not establish enough benefit to retain; the more
-complex combined variant did not establish an additional gain over the selected implementation.
+**Memory allocated per record, before → after:**
+10k: **1.655 → 1.655 bytes**; 100k: **1.313 → 1.313 bytes**;
+1M: **2.097 → 2.097 bytes**. These changes improve execution speed without reducing allocation.
 
-Earlier preparation measurements also found the Java compiler substantially cheaper than Scala
-staging for this filter: **4.32 ms vs 935.9 ms** for the first compilation in a fresh JVM. This
-comparison used the earlier short-literal version, before the latest two optimizations; it is
-not part of the runtime gain above. See [preparation measurements and limits](bench/results/optimization/README.md#filter-preparation-recheck).
+CPU usage, CPU-seconds and resident memory were not measured directly. The
+reported metrics are elapsed processing time, throughput and allocated bytes.
 
-See the [full optimization report](bench/research/profile-guided-2026-11-18/README.md),
-[confirmation data and intervals](bench/research/profile-guided-2026-11-18/confirmation/comparison.json)
-and [validation logs](bench/research/profile-guided-2026-11-18/validation/).
-CPU flame graphs for the 1M pool: [before](bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/cpu.html),
+## 1. Compare short string literals directly
+
+**Benefit: 17.9% less time at 10k records; 5.3% less at 1M. No allocation reduction.**
+
+Previously, comparing a field with `"FR"` used the general array-comparison routine.
+The generator now emits the known length and bytes directly:
+
+```java
+length == 2 && bytes[offset] == 'F' && bytes[offset + 1] == 'R'
+```
+
+This removes general variable-length comparison work from a frequently executed path.
+It applies to literals of at most eight UTF-8 bytes; longer literals use the existing
+comparison. The JIT already inlined the old helper, so the gain comes from simpler
+comparison code, not merely from removing a method call.
+
+| Distinct records | Before | After | Processing time | Throughput |
+|---|---:|---:|---:|---:|
+| 10,000 | 1.762927 s | 1.447141 s | **−17.9%** | **+21.8%** |
+| 100,000 | 3.298141 s | 3.289299 s | No convincing gain | No convincing gain |
+| 1,000,000 | 4.480896 s | 4.241866 s | **−5.3%** | **+5.6%** |
+
+Allocation stays at **1.655 B/record at 10k**, **1.313 at 100k** and **2.097 at 1M**,
+before and after. No strings were allocated for these comparisons in either version.
+
+These are repeated measurements from the earlier campaign, with three fresh JVMs per
+version and pool. The baseline is the restored Java implementation. This optimization
+was retained **before** the latest autoresearch campaign.
+
+## 2. Decode small lengths without the general long decoder
+
+**Benefit when tested alone: 11.7% less time at 10k; 10.6% less at 1M.
+No allocation reduction.**
+
+Avro encodes a small nonnegative length in one byte. Previously, every length passed
+through the general `long` decoder. The new path decodes that byte with integer
+operations and checks its sign and bounds immediately. Multi-byte lengths still use
+the complete existing decoder.
+
+| Distinct records | Before | After | Processing time | Throughput |
+|---|---:|---:|---:|---:|
+| 10,000 | 1.408550 s | 1.244215 s | **−11.7%** | **+13.2%** |
+| 1,000,000 | 4.184542 s | 3.741757 s | **−10.6%** | **+11.8%** |
+
+Allocation: **1.655 → 1.655 B/record at 10k** and **2.097 → 2.097 at 1M**.
+The decoder does less work on short lengths; it creates the same objects as before.
+
+These isolated results come from screening with three fresh JVMs per version and pool.
+The baseline already includes optimization 1. The 100k pool was not measured in
+isolation. Independent confirmation tested this change together with optimization 3;
+those results are in the first table.
+
+## 3. Test the short string equality before the numeric range
+
+**Benefit when tested alone: 26.0% less time at 1M records. The 10k result is
+inconclusive. No allocation reduction.**
+
+For a conjunction such as `age > 30 && country == "FR"`, the generator now evaluates
+the short string equality first. A failing country comparison avoids the numeric
+comparison. All referenced fields are still read and validated before either test.
+
+The generator swaps an AND pair when a numeric range test comes before a string
+equality with a literal of at most eight UTF-8 bytes. Numeric `EQ`/`NE` and longer
+literals keep the caller's order.
+
+| Distinct records | Before | After | Processing time | Throughput |
+|---|---:|---:|---:|---:|
+| 10,000 | 1.408550 s | 1.435809 s | +1.9%, inconclusive | −1.9%, inconclusive |
+| 1,000,000 | 4.184542 s | 3.096385 s | **−26.0%** | **+35.1%** |
+
+Allocation: **1.655 → 1.655 B/record at 10k** and **2.097 → 2.097 at 1M**.
+The gain comes from the changed comparison path, not from skipping required decoding
+or constructing fewer output records.
+
+These are isolated screening results from three fresh JVMs per version and pool,
+against the baseline with optimization 1. The 100k pool was not tested in isolation.
+The small-pool mean was slower, but the uncertainty does not establish a regression.
+The combined implementation was subsequently confirmed faster at all three pool sizes.
+
+## What the percentages mean
+
+**The individual gains do not add up.** Optimization 1 uses an earlier baseline;
+optimizations 2 and 3 were each screened against a version that already included it.
+The first table measures the combined effect of 2 + 3 in fresh runs. We have not
+measured a cumulative percentage for all three against the earliest version in one
+confirmation campaign.
+
+A 32.9% reduction in time corresponds to a 49.1% increase in throughput for the same
+work: time change is `after / before − 1`, throughput change is `before / after − 1`.
+
+No memory-saving optimization was retained. Allocation profiles are dominated by the
+output arrays. The JIT already eliminated the per-record cursor allocation before
+these changes, and still does afterward.
+
+## Other experiments
+
+| Experiment | Result |
+|---|---|
+| Integer comparisons instead of converting to `double` where semantics permit | No statistically resolved useful gain. Not retained. |
+| Packed UTF-8 loads of 2, 4 or 8 bytes | No statistically resolved useful gain on their own. Not retained. |
+| Fuse length validation and cursor advancement | Faster means, but insufficient evidence to clear the useful-gain threshold. Not retained. |
+| Combine packed loads with eager boolean evaluation | No resolved additional gain over the simpler retained combination. Not retained. |
+
+## Measurement and correctness
+
+The final comparison used **30 fresh JVMs and 150 measured invocations**: five JVMs
+per version and pool, with six warmups and five measurements each. All three gains
+clear a predeclared 2% useful-improvement threshold using conservative 95% intervals
+from the autoresearch evaluator. One JVM mean counts as one independent observation.
+
+Environment: **Apple M4 Max, Temurin 25.0.3, one benchmark thread, 2 GiB heap**.
+Profiling was separate from timing. These are measurements of one in-memory filter
+and caller; in a separate guard with mixed short and long strings, the gain was
+inconclusive.
+
+**249 tests passed**, including malformed input, numeric rounding, Unicode, slices
+and record identity checks. Required-field validation is preserved. A standalone
+Java consumer also passed against the packaged JAR.
+
+Sources for auditing or reproduction:
+[short-literal measurements](bench/results/optimization/confirmed/summary.json),
+[isolated experiments](bench/research/profile-guided-2026-11-18/screen-1/comparison.json),
+[final confirmation](bench/research/profile-guided-2026-11-18/confirmation/comparison.json),
+[full protocol and commands](bench/research/profile-guided-2026-11-18/README.md).
+CPU flame graphs for the 1M pool:
+[before](bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/cpu.html),
 [after](bench/research/profile-guided-2026-11-18/profiles/selected/1000000/cpu.html),
 [difference](bench/research/profile-guided-2026-11-18/profiles/diff/1000000.html).
 Download the HTML files and open them in a browser for interactive inspection.
-
-## Scala usage
-
-```scala
-val pipeline = Pipeline
-  .fromConfig[String](ConsumeConfig(Seq("users"), jq = Some("""select(.age > 30 and .country == "FR")""")))
-  .fold(throw _, identity)
-
-val out: Iterable[Record[String, Json]] = pipeline(batch)
-```
-
-On raw Kafka values (`Array[Byte]`), JSON or Avro (Confluent wire format, writer schemas from a
-registry):
-
-```scala
-val pipeline = Pipeline
-  .forBytes[String](
-    ConsumeConfig(Seq("users"), PayloadFormat.Avro, jq = Some("""select(.age > 30)""")),
-    schemas = registrySnapshot.get // Int => Option[Schema]; fetching is the consumer's job (Confluent.schemaIds)
-  )
-  .fold(throw _, identity)
-```
-
-A record kept unchanged (a filter) is emitted with its original bytes; a transformed value is
-emitted as JSON. Values that cannot be decoded are skipped.
-
-Each jq output gives one record (same metadata and key, value = the output): `select(...)` filters,
-`.user` projects, `.items[]` splits a record into several.
-
-## Supported jq
-
-`.`, `.a`, `."a"`, `.["a"]`, `.[0]`, `.[-1]`, `.[]`, `|`, `and`, `or`, `not`, `==`, `!=`, `<`, `<=`,
-`>`, `>=`, `select`, `empty`, `length`, `test`, `startswith`, `endswith`, literals
-(numbers, strings, `true`, `false`, `null`).
-
-Semantics follow jq 1.7 (type order, `null` propagation, errors, order of outputs for operators that
-yield several values); the tests check it against the `jq` binary when it is installed. If the program
-fails on a record, that record's remaining outputs are dropped. `test` uses `java.util.regex`, not Oniguruma.
-
-## JSON view of Avro values
-
-jq programs see Avro values as JSON (`format/AvroJson`): unions unwrapped (`null` or `"x"`, not
-`{"string":"x"}`), enums as strings, maps and records as objects, `bytes`/`fixed` as base64 strings,
-`decimal` as numbers, other logical types as their underlying value (`timestamp-millis`: a number of
-milliseconds), NaN and infinities as `null`. Values are read with their writer schema: a field missing
-from an older schema is `null`.
-
-## How it works
-
-- `jq/Parser`: jq subset → `Jq` AST.
-- `jq/Interpreter`: tree-walking interpreter, the reference semantics (`Engine.Interpreted`).
-- `jq/Staged`: generates the Scala code for this very program, compiles it with the staging
-  compiler and loads it (`Engine.Staged`, the default). Continuations are inlined at staging time
-  (CPS), so the program is fused into the loop over the batch: no AST, no closures, comparisons
-  specialised on the literal type, booleans never boxed into `Json`, literals and regexes built
-  once, constant folding, records kept by a filter are not copied.
-- `jq/Runtime`: jq semantics shared by both.
-- `format/AvroStaged`: for Avro, the staged code reads the bytes directly, for each writer schema.
-  The program is first generated in recording mode to find the paths it uses (`.user.age`); a
-  reading plan is derived from the writer schema (fields in schema order, the needed ones into
-  typed local variables, the others skipped without being decoded, stop after the last needed
-  one); then the program is generated on these variables. Strings are compared as UTF-8 bytes in
-  place, union branches that cannot match are folded away. Values used as a whole (records,
-  arrays, maps, bytes) are read into their JSON view. One compilation per (program, schema id),
-  on first sight of the id.
-- `format/JsonStaged`: the same for JSON. Keys come in any order, so each object of interest is
-  scanned and its keys compared as bytes with the expected names; the values of the others are
-  skipped without being decoded. Types are only known at runtime: a used value is kept as its kind
-  plus a double, or its position in the payload, and comparisons are generated for every kind
-  (most fold to constants by jq's type order). The whole payload is read and validated (the tests
-  check it is rejected exactly when circe rejects it); duplicate keys: the last one wins, as in jq.
-
-See the generated code: `sbt 'core/Test/runMain konsume.jq.showStaged "select(.age > 30)"'`, or
-for Avro `sbt 'core/Test/runMain konsume.format.showAvroStaged schema.avsc "select(.age > 30)"'`.
-
-For JSON: `sbt 'core/Test/runMain konsume.format.showJsonStaged "select(.age > 30)"'`.
-
-Known limits of the staged decoders:
-- Avro: reading stops after the last field the program needs, so a payload corrupted or
-  truncated after that point is accepted (the reference decoder rejects it);
-- JSON: invalid UTF-8 is not detected, and strings are compared as bytes when they have no
-  escapes, so the result on invalid UTF-8 may differ from the reference;
-- the first record of a new schema id waits for its compilation (tens of ms, ~1s for the very
-  first one); compiling in the background meanwhile is not done yet;
-- very large schemas could generate methods over the JIT's size limit (8000 bytes of bytecode),
-  which would then stay interpreted: not handled yet.
-
-The first staging compilation takes about a second (the compiler warms up), later ones tens of
-milliseconds; compiled programs are cached. Anything running staged code must fork the JVM
-(`fork := true`), because the staging compiler reads its classpath from `java.class.path`.
-
-## Benchmark
-
-`sbt 'bench/Jmh/run -prof gc'`: 10k records already deserialised, JDK 25, µs per batch (lower is better).
-
-| program                                            | hand-written | staged | interpreted |
-|----------------------------------------------------|-------------:|-------:|------------:|
-| `select(.user.age > 30 and .user.country == "FR")` |          238 |    286 |         846 |
-| `select(.name \| test("^jo"))`                     |          268 |    272 |         865 |
-| `.items[] \| select(. > 50)`                       |          456 |    379 |         908 |
-
-`sbt 'bench/Jmh/run -prof gc konsume.bench.DecodeBench'`: from Kafka bytes, same filter,
-10k records (~65 bytes in JSON, ~19 in Avro), µs per batch (allocation per batch).
-
-| bytes => filtered records                 |            JSON |            Avro |
-|--------------------------------------------|----------------:|----------------:|
-| decoded to JSON first, then staged filter  | 3 060 (17.4 MB) | 3 166 (20.7 MB) |
-| staged decoder on the bytes                | **1 053 (416 KB)** | **127 (16 KB)** |
-
-For reference: decoding alone to JSON takes ~2 700 µs, Avro to `GenericRecord` alone 843 µs, the
-staged filter alone on decoded JSON ~260 µs. JSON is slower than Avro by nature: every byte must
-be scanned and validated, keys must be compared, types checked at runtime.
