@@ -234,10 +234,14 @@ public final class AvroFilterCompiler {
             case Filter.And f -> {
                 Label next = c.newLabel();
                 Filter left = f.left(), right = f.right();
-                // Experimental heuristic: categorical equality before a numeric
-                // threshold. All referenced fields have already been validated;
-                // only the order of pure comparisons changes, never the reading plan.
-                if (left instanceof Filter.NumberComparison && right instanceof Filter.StringEquality) {
+                // Try a bounded string equality before a numeric range test. Keep
+                // numeric equalities and potentially expensive long-string comparisons
+                // in the caller's order. The complete reading plan has already validated
+                // every referenced field, independently of these pure comparisons.
+                if (left instanceof Filter.NumberComparison n
+                        && n.comparison() != Filter.Comparison.EQ && n.comparison() != Filter.Comparison.NE
+                        && right instanceof Filter.StringEquality s
+                        && s.value().getBytes(StandardCharsets.UTF_8).length <= 8) {
                     left = f.right();
                     right = f.left();
                 }
