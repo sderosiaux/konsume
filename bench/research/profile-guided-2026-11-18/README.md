@@ -2,8 +2,11 @@
 
 The selected candidate passed independent confirmation: elapsed time fell by **11.3%
 at 10k, 31.1% at 100k and 32.9% at 1M distinct records**. The primary benchmark and
-original input fixture remain unchanged. All work and evidence live outside `/tmp`;
-no remote branch has been published.
+original input fixture remain unchanged. All work and evidence live outside `/tmp`.
+Following the user's publication request on 2026-11-19, the implementation, evidence
+and experiment branches are published in the [sderosiaux/konsume fork](https://github.com/sderosiaux/konsume),
+with `autoresearch/classfile-profiling-2026-11-18` as its default branch. The frozen
+protocol and decision describe the earlier local campaign, before publication.
 
 The baseline is the Java implementation retained after the
 [first autoresearch experiments](../classfile-2026-11-18/README.md). The previous short-literal
@@ -39,6 +42,9 @@ Unprofiled JMH GC measurements remain about 1.655 bytes/record at 10k and
 do not come from omitting result construction or reducing output allocations.
 
 Interactive artifacts:
+
+Download the HTML files and open them in a browser to use their interactive flame
+graphs; GitHub's file viewer displays their source.
 
 - Baseline CPU: [10k](profiles/baseline/10000/cpu.html), [1M](profiles/baseline/1000000/cpu.html).
 - Selected CPU: [10k](profiles/selected/10000/cpu.html), [1M](profiles/selected/1000000/cpu.html).
@@ -250,5 +256,6 @@ The official [async-profiler 4.6 macOS archive](https://github.com/async-profile
 was verified against SHA-256
 `646540c3c852d7fa7e43bbc4f090a193b7bfaf62d0954b42e98eae09edf36113` before execution.
 Profiling and measurement scripts, raw evidence and rejected experiments remain available
-for reproduction. No native autoresearch coordinator, Claude plugin hooks or remote
-publication were used; the hypothesis loop uses the user's statistical evaluator directly.
+for reproduction. No native autoresearch coordinator or Claude plugin hooks were used;
+the hypothesis loop uses the user's statistical evaluator directly. The local campaign
+was completed before the user requested publication of the fork.
