@@ -4,9 +4,11 @@ The selected candidate passed independent confirmation: elapsed time fell by **1
 at 10k, 31.1% at 100k and 32.9% at 1M distinct records**. The primary benchmark and
 original input fixture remain unchanged. All work and evidence live outside `/tmp`.
 Following the user's publication request on 2026-11-19, the implementation, evidence
-and experiment branches are published in the [sderosiaux/konsume fork](https://github.com/sderosiaux/konsume),
-with `autoresearch/classfile-profiling-2026-11-18` as its default branch. The frozen
-protocol and decision describe the earlier local campaign, before publication.
+and experiment branches are published in the [sderosiaux/konsume fork](https://github.com/sderosiaux/konsume).
+The retained implementation is on `main`, now the default branch; the original
+`autoresearch/classfile-profiling-2026-11-18` branch and individual experiments remain
+available. The frozen protocol and decision describe the earlier local campaign,
+before publication.
 
 The baseline is the Java implementation retained after the
 [first autoresearch experiments](../classfile-2026-11-18/README.md). The previous short-literal
