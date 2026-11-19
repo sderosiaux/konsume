@@ -1,0 +1,2 @@
+# Full logs remain local; gzip copies and extracted evidence are portable.
+jit-*.xml

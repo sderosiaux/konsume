@@ -1,0 +1,54 @@
+Starting round-1-10000-scala
+Completed round-1-10000-scala: 1.810147 s/op
+Starting round-1-10000-restored
+Completed round-1-10000-restored: 1.736246 s/op
+Starting round-1-10000-optimized
+Completed round-1-10000-optimized: 1.436545 s/op
+Starting round-1-100000-restored
+Completed round-1-100000-restored: 3.174097 s/op
+Starting round-1-100000-optimized
+Completed round-1-100000-optimized: 3.359020 s/op
+Starting round-1-100000-scala
+Completed round-1-100000-scala: 3.851485 s/op
+Starting round-1-1000000-optimized
+Completed round-1-1000000-optimized: 4.119235 s/op
+Starting round-1-1000000-scala
+Completed round-1-1000000-scala: 4.638370 s/op
+Starting round-1-1000000-restored
+Completed round-1-1000000-restored: 4.441230 s/op
+Starting round-2-10000-restored
+Completed round-2-10000-restored: 1.726297 s/op
+Starting round-2-10000-optimized
+Completed round-2-10000-optimized: 1.423081 s/op
+Starting round-2-10000-scala
+Completed round-2-10000-scala: 1.755728 s/op
+Starting round-2-100000-optimized
+Completed round-2-100000-optimized: 3.379391 s/op
+Starting round-2-100000-scala
+Completed round-2-100000-scala: 4.243892 s/op
+Starting round-2-100000-restored
+Completed round-2-100000-restored: 3.460870 s/op
+Starting round-2-1000000-scala
+Completed round-2-1000000-scala: 4.871638 s/op
+Starting round-2-1000000-restored
+Completed round-2-1000000-restored: 4.569646 s/op
+Starting round-2-1000000-optimized
+Completed round-2-1000000-optimized: 4.392496 s/op
+Starting round-3-10000-optimized
+Completed round-3-10000-optimized: 1.481799 s/op
+Starting round-3-10000-scala
+Completed round-3-10000-scala: 1.802919 s/op
+Starting round-3-10000-restored
+Completed round-3-10000-restored: 1.826238 s/op
+Starting round-3-100000-scala
+Completed round-3-100000-scala: 4.053822 s/op
+Starting round-3-100000-restored
+Completed round-3-100000-restored: 3.259456 s/op
+Starting round-3-100000-optimized
+Completed round-3-100000-optimized: 3.129486 s/op
+Starting round-3-1000000-restored
+Completed round-3-1000000-restored: 4.431811 s/op
+Starting round-3-1000000-optimized
+Completed round-3-1000000-optimized: 4.213867 s/op
+Starting round-3-1000000-scala
+Completed round-3-1000000-scala: 4.777288 s/op

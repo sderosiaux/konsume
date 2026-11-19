@@ -1,0 +1,112 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "konsume.bench.OptimizationBench.process",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java",
+        "jvmArgs" : [
+            "-XX:+UnlockDiagnosticVMOptions",
+            "-XX:+LogCompilation",
+            "-XX:LogFile=/Users/sderosiaux/code/personal/konsume/bench/results/optimization/jit-%p.xml"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 4,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "batchSize" : "10000",
+            "engine" : "restored"
+        },
+        "primaryMetric" : {
+            "score" : 1.851865709,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.851865709,
+                "50.0" : 1.851865709,
+                "90.0" : 1.851865709,
+                "95.0" : 1.851865709,
+                "99.0" : 1.851865709,
+                "99.9" : 1.851865709,
+                "99.99" : 1.851865709,
+                "99.999" : 1.851865709,
+                "99.9999" : 1.851865709,
+                "100.0" : 1.851865709
+            },
+            "scoreUnit" : "s/op",
+            "rawData" : [
+                [
+                    1.851865709
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "konsume.bench.OptimizationBench.process",
+        "mode" : "ss",
+        "threads" : 1,
+        "forks" : 1,
+        "jvm" : "/Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java",
+        "jvmArgs" : [
+            "-XX:+UnlockDiagnosticVMOptions",
+            "-XX:+LogCompilation",
+            "-XX:LogFile=/Users/sderosiaux/code/personal/konsume/bench/results/optimization/jit-%p.xml"
+        ],
+        "jdkVersion" : "25.0.3",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "25.0.3+9-LTS",
+        "warmupIterations" : 4,
+        "warmupTime" : "single-shot",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 1,
+        "measurementTime" : "single-shot",
+        "measurementBatchSize" : 1,
+        "params" : {
+            "batchSize" : "10000",
+            "engine" : "optimized"
+        },
+        "primaryMetric" : {
+            "score" : 1.467545042,
+            "scoreError" : "NaN",
+            "scoreConfidence" : [
+                "NaN",
+                "NaN"
+            ],
+            "scorePercentiles" : {
+                "0.0" : 1.467545042,
+                "50.0" : 1.467545042,
+                "90.0" : 1.467545042,
+                "95.0" : 1.467545042,
+                "99.0" : 1.467545042,
+                "99.9" : 1.467545042,
+                "99.99" : 1.467545042,
+                "99.999" : 1.467545042,
+                "99.9999" : 1.467545042,
+                "100.0" : 1.467545042
+            },
+            "scoreUnit" : "s/op",
+            "rawData" : [
+                [
+                    1.467545042
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

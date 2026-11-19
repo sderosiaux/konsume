@@ -1,0 +1,140 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 6 iterations, single-shot each
+# Measurement: 5 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.OptimizationBench.process
+# Parameters: (batchSize = 1000000, engine = optimized)
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Optimization: optimized, 1000000 distinct records, 19392321 payload bytes, 152690 retained/pass, 300 passes = 300000000 records/invocation
+5.120 s/op
+# Warmup Iteration   2: 4.278 s/op
+# Warmup Iteration   3: 4.432 s/op
+# Warmup Iteration   4: 4.438 s/op
+# Warmup Iteration   5: 4.351 s/op
+# Warmup Iteration   6: 4.313 s/op
+Iteration   1: 4.373 s/op
+                 gc.alloc.rate:      137.213 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           4.000 counts
+                 gc.time:            50.000 ms
+
+Iteration   2: 4.379 s/op
+                 gc.alloc.rate:      137.028 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            15.000 ms
+
+Iteration   3: 4.433 s/op
+                 gc.alloc.rate:      135.356 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           4.000 counts
+                 gc.time:            30.000 ms
+
+Iteration   4: 4.401 s/op
+                 gc.alloc.rate:      136.352 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            14.000 ms
+
+Iteration   5: 4.376 s/op
+                 gc.alloc.rate:      137.128 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           4.000 counts
+                 gc.time:            32.000 ms
+
+
+
+Result "konsume.bench.OptimizationBench.process":
+  N = 5
+  mean =      4.392 ±(99.9%) 0.097 s/op
+
+  Histogram, s/op:
+    [4.370, 4.375) = 1 
+    [4.375, 4.380) = 2 
+    [4.380, 4.385) = 0 
+    [4.385, 4.390) = 0 
+    [4.390, 4.395) = 0 
+    [4.395, 4.400) = 0 
+    [4.400, 4.405) = 1 
+    [4.405, 4.410) = 0 
+    [4.410, 4.415) = 0 
+    [4.415, 4.420) = 0 
+    [4.420, 4.425) = 0 
+    [4.425, 4.430) = 0 
+    [4.430, 4.435) = 1 
+    [4.435, 4.440) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      4.373 s/op
+     p(50.0000) =      4.379 s/op
+     p(90.0000) =      4.433 s/op
+     p(95.0000) =      4.433 s/op
+     p(99.0000) =      4.433 s/op
+     p(99.9000) =      4.433 s/op
+     p(99.9900) =      4.433 s/op
+     p(99.9990) =      4.433 s/op
+     p(99.9999) =      4.433 s/op
+    p(100.0000) =      4.433 s/op
+
+Secondary result "konsume.bench.OptimizationBench.process:gc.alloc.rate":
+  136.615 ±(99.9%) 3.012 MB/sec [Average]
+  (min, avg, max) = (135.356, 136.615, 137.213), stdev = 0.782
+  CI (99.9%): [133.604, 139.627] (assumes normal distribution)
+
+Secondary result "konsume.bench.OptimizationBench.process:gc.alloc.rate.norm":
+  629236440.000 ±(99.9%) 0.001 B/op [Average]
+  (min, avg, max) = (629236440.000, 629236440.000, 629236440.000), stdev = 0.001
+  CI (99.9%): [629236440.000, 629236440.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.OptimizationBench.process:gc.count":
+  14.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (1.000, 2.800, 4.000), stdev = 1.643
+  CI (99.9%): [14.000, 14.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.OptimizationBench.process:gc.time":
+  141.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (14.000, 28.200, 50.000), stdev = 14.738
+  CI (99.9%): [141.000, 141.000] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:49
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                     (batchSize)   (engine)  Mode  Cnt          Score   Error   Units
+OptimizationBench.process                         1000000  optimized    ss    5          4.392 ± 0.097    s/op
+OptimizationBench.process:gc.alloc.rate           1000000  optimized    ss    5        136.615 ± 3.012  MB/sec
+OptimizationBench.process:gc.alloc.rate.norm      1000000  optimized    ss    5  629236440.000 ± 0.001    B/op
+OptimizationBench.process:gc.count                1000000  optimized    ss    5         14.000          counts
+OptimizationBench.process:gc.time                 1000000  optimized    ss    5        141.000              ms
+
+Benchmark result is saved to /Users/sderosiaux/code/personal/konsume/bench/results/optimization/confirmed/round-2-1000000-optimized.json

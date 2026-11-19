@@ -1,0 +1,86 @@
+[
+  {
+    "log": "jit-pid25859.xml",
+    "nmethodSize": "3528",
+    "helpers": [
+      [
+        "java.util.Objects.checkFromIndexSize",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "jdk.internal.util.Preconditions.checkFromIndexSize",
+        "inline_success",
+        "inline (hot)"
+      ]
+    ],
+    "intrinsics": []
+  },
+  {
+    "log": "jit-pid25848.xml",
+    "nmethodSize": "4560",
+    "helpers": [
+      [
+        "java.util.Objects.checkFromIndexSize",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "jdk.internal.util.Preconditions.checkFromIndexSize",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "java.util.Arrays.equals",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "java.util.Arrays.rangeCheck",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "java.util.Arrays.rangeCheck",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "jdk.internal.util.ArraysSupport.mismatch",
+        "inline_success",
+        "inline (hot)"
+      ],
+      [
+        "jdk.internal.util.ArraysSupport.vectorizedMismatch",
+        "inline_success",
+        "inline (hot)"
+      ]
+    ],
+    "intrinsics": [
+      {
+        "id": "_getLongUnaligned",
+        "nodes": "5"
+      },
+      {
+        "id": "_getLongUnaligned",
+        "nodes": "5"
+      },
+      {
+        "id": "_numberOfTrailingZeros_l",
+        "nodes": "1"
+      },
+      {
+        "id": "_getIntUnaligned",
+        "nodes": "5"
+      },
+      {
+        "id": "_getIntUnaligned",
+        "nodes": "5"
+      },
+      {
+        "id": "_numberOfTrailingZeros_i",
+        "nodes": "1"
+      }
+    ]
+  }
+]

@@ -1,0 +1,488 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/sbt-launch/1.12.6/sbt-launch-1.12.6.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.scalasbt.ipcsocket.NativeLoader in an unnamed module (file:/Users/sderosiaux/.sbt/boot/scala-2.12.21/org.scala-sbt/sbt/1.13.1/ipcsocket-1.8.1.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[info] welcome to sbt 1.13.1 (Eclipse Adoptium Java 25.0.3)
+[info] loading settings for project konsume-build from plugins.sbt...
+[info] loading project definition from /Users/sderosiaux/code/personal/konsume/project
+[info] loading settings for project root from build.sbt...
+[info] set current project to root (in build file:/Users/sderosiaux/code/personal/konsume/)
+[info] running (fork) org.openjdk.jmh.Main -prof gc -rf json -rff /Users/sderosiaux/code/personal/konsume/bench/results/optimization/warm-compilation.json konsume.bench.WarmCompilationBench.*
+[error] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[error] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[error] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[error] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[info] # JMH version: 1.37
+[info] # VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+[info] # VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+[info] # VM options: <none>
+[info] # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+[info] # Warmup: 8 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Average time, time/op
+[info] # Benchmark: konsume.bench.WarmCompilationBench.javaClassfile
+[info] # Run progress: 0.00% complete, ETA 00:00:52
+[info] # Fork: 1 of 2
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] # Warmup Iteration   1: 0.018 ms/op
+[info] # Warmup Iteration   2: 0.015 ms/op
+[info] # Warmup Iteration   3: 0.017 ms/op
+[info] # Warmup Iteration   4: 0.017 ms/op
+[info] # Warmup Iteration   5: 0.018 ms/op
+[info] # Warmup Iteration   6: 0.025 ms/op
+[info] # Warmup Iteration   7: 0.018 ms/op
+[info] # Warmup Iteration   8: 0.015 ms/op
+[info] Iteration   1: 0.017 ms/op
+[info]                  gc.alloc.rate:      1931.434 MB/sec
+[info]                  gc.alloc.rate.norm: 33800.131 B/op
+[info]                  gc.count:           8.000 counts
+[info]                  gc.time:            171.000 ms
+[info] Iteration   2: 0.015 ms/op
+[info]                  gc.alloc.rate:      2150.747 MB/sec
+[info]                  gc.alloc.rate.norm: 33800.113 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            47.000 ms
+[info] Iteration   3: 0.018 ms/op
+[info]                  gc.alloc.rate:      1839.039 MB/sec
+[info]                  gc.alloc.rate.norm: 33800.137 B/op
+[info]                  gc.count:           8.000 counts
+[info]                  gc.time:            194.000 ms
+[info] Iteration   4: 0.016 ms/op
+[info]                  gc.alloc.rate:      2067.637 MB/sec
+[info]                  gc.alloc.rate.norm: 33800.115 B/op
+[info]                  gc.count:           3.000 counts
+[info]                  gc.time:            40.000 ms
+[info] Iteration   5: 0.019 ms/op
+[info]                  gc.alloc.rate:      1717.982 MB/sec
+[info]                  gc.alloc.rate.norm: 33800.155 B/op
+[info]                  gc.count:           11.000 counts
+[info]                  gc.time:            223.000 ms
+[info] # Run progress: 25.00% complete, ETA 00:00:40
+[info] # Fork: 2 of 2
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] # Warmup Iteration   1: 0.019 ms/op
+[info] # Warmup Iteration   2: 0.016 ms/op
+[info] # Warmup Iteration   3: 0.017 ms/op
+[info] # Warmup Iteration   4: 0.018 ms/op
+[info] # Warmup Iteration   5: 0.017 ms/op
+[info] # Warmup Iteration   6: 0.015 ms/op
+[info] # Warmup Iteration   7: 0.018 ms/op
+[info] # Warmup Iteration   8: 0.022 ms/op
+[info] Iteration   1: 0.018 ms/op
+[info]                  gc.alloc.rate:      1837.522 MB/sec
+[info]                  gc.alloc.rate.norm: 33784.138 B/op
+[info]                  gc.count:           8.000 counts
+[info]                  gc.time:            193.000 ms
+[info] Iteration   2: 0.015 ms/op
+[info]                  gc.alloc.rate:      2098.517 MB/sec
+[info]                  gc.alloc.rate.norm: 33784.116 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            46.000 ms
+[info] Iteration   3: 0.017 ms/op
+[info]                  gc.alloc.rate:      1879.223 MB/sec
+[info]                  gc.alloc.rate.norm: 33784.134 B/op
+[info]                  gc.count:           8.000 counts
+[info]                  gc.time:            187.000 ms
+[info] Iteration   4: 0.015 ms/op
+[info]                  gc.alloc.rate:      2124.055 MB/sec
+[info]                  gc.alloc.rate.norm: 33784.114 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            61.000 ms
+[info] Iteration   5: 0.019 ms/op
+[info]                  gc.alloc.rate:      1709.794 MB/sec
+[info]                  gc.alloc.rate.norm: 33784.153 B/op
+[info]                  gc.count:           10.000 counts
+[info]                  gc.time:            238.000 ms
+[info] Result "konsume.bench.WarmCompilationBench.javaClassfile":
+[info]   0.017 ±(99.9%) 0.002 ms/op [Average]
+[info]   (min, avg, max) = (0.015, 0.017, 0.019), stdev = 0.001
+[info]   CI (99.9%): [0.015, 0.019] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.javaClassfile:gc.alloc.rate":
+[info]   1935.595 ±(99.9%) 250.087 MB/sec [Average]
+[info]   (min, avg, max) = (1709.794, 1935.595, 2150.747), stdev = 165.417
+[info]   CI (99.9%): [1685.509, 2185.682] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.javaClassfile:gc.alloc.rate.norm":
+[info]   33792.131 ±(99.9%) 12.749 B/op [Average]
+[info]   (min, avg, max) = (33784.114, 33792.131, 33800.155), stdev = 8.432
+[info]   CI (99.9%): [33779.382, 33804.879] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.javaClassfile:gc.count":
+[info]   68.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (3.000, 6.800, 11.000), stdev = 2.821
+[info]   CI (99.9%): [68.000, 68.000] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.javaClassfile:gc.time":
+[info]   1400.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (40.000, 140.000, 238.000), stdev = 81.045
+[info]   CI (99.9%): [1400.000, 1400.000] (assumes normal distribution)
+[info] # JMH version: 1.37
+[info] # VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+[info] # VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+[info] # VM options: <none>
+[info] # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+[info] # Warmup: 8 iterations, 1 s each
+[info] # Measurement: 5 iterations, 1 s each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread, will synchronize iterations
+[info] # Benchmark mode: Average time, time/op
+[info] # Benchmark: konsume.bench.WarmCompilationBench.scalaStaging
+[info] # Run progress: 50.00% complete, ETA 00:00:26
+[info] # Fork: 1 of 2
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] # Warmup Iteration   1: 205.005 ms/op
+[info] # Warmup Iteration   2: 7.397 ms/op
+[info] # Warmup Iteration   3: 4.189 ms/op
+[info] # Warmup Iteration   4: 3.073 ms/op
+[info] # Warmup Iteration   5: 3.107 ms/op
+[info] # Warmup Iteration   6: 2.914 ms/op
+[info] # Warmup Iteration   7: 2.808 ms/op
+[info] # Warmup Iteration   8: 2.598 ms/op
+[info] Iteration   1: 2.687 ms/op
+[info]                  gc.alloc.rate:      1083.992 MB/sec
+[info]                  gc.alloc.rate.norm: 3055284.992 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            12.000 ms
+[info] Iteration   2: 2.495 ms/op
+[info]                  gc.alloc.rate:      1167.504 MB/sec
+[info]                  gc.alloc.rate.norm: 3054961.208 B/op
+[info]                  gc.count:           3.000 counts
+[info]                  gc.time:            9.000 ms
+[info] Iteration   3: 2.360 ms/op
+[info]                  gc.alloc.rate:      1233.650 MB/sec
+[info]                  gc.alloc.rate.norm: 3053015.944 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            13.000 ms
+[info] Iteration   4: 1.874 ms/op
+[info]                  gc.alloc.rate:      1552.557 MB/sec
+[info]                  gc.alloc.rate.norm: 3050616.790 B/op
+[info]                  gc.count:           7.000 counts
+[info]                  gc.time:            32.000 ms
+[info] Iteration   5: 1.788 ms/op
+[info]                  gc.alloc.rate:      1628.164 MB/sec
+[info]                  gc.alloc.rate.norm: 3052611.429 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            13.000 ms
+[info] # Run progress: 75.00% complete, ETA 00:00:13
+[info] # Fork: 2 of 2
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] # Warmup Iteration   1: 205.737 ms/op
+[info] # Warmup Iteration   2: 8.174 ms/op
+[info] # Warmup Iteration   3: 5.051 ms/op
+[info] # Warmup Iteration   4: 4.072 ms/op
+[info] # Warmup Iteration   5: 3.573 ms/op
+[info] # Warmup Iteration   6: 3.068 ms/op
+[info] # Warmup Iteration   7: 2.812 ms/op
+[info] # Warmup Iteration   8: 2.762 ms/op
+[info] Iteration   1: 2.584 ms/op
+[info]                  gc.alloc.rate:      1128.030 MB/sec
+[info]                  gc.alloc.rate.norm: 3057082.386 B/op
+[info]                  gc.count:           3.000 counts
+[info]                  gc.time:            9.000 ms
+[info] Iteration   2: 2.476 ms/op
+[info]                  gc.alloc.rate:      1176.195 MB/sec
+[info]                  gc.alloc.rate.norm: 3054245.498 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            17.000 ms
+[info] Iteration   3: 2.397 ms/op
+[info]                  gc.alloc.rate:      1214.741 MB/sec
+[info]                  gc.alloc.rate.norm: 3053911.465 B/op
+[info]                  gc.count:           3.000 counts
+[info]                  gc.time:            11.000 ms
+[info] Iteration   4: 2.442 ms/op
+[info]                  gc.alloc.rate:      1192.219 MB/sec
+[info]                  gc.alloc.rate.norm: 3052702.307 B/op
+[info]                  gc.count:           5.000 counts
+[info]                  gc.time:            31.000 ms
+[info] Iteration   5: 2.247 ms/op
+[info]                  gc.alloc.rate:      1294.217 MB/sec
+[info]                  gc.alloc.rate.norm: 3050276.430 B/op
+[info]                  gc.count:           4.000 counts
+[info]                  gc.time:            11.000 ms
+[info] Result "konsume.bench.WarmCompilationBench.scalaStaging":
+[info]   2.335 ±(99.9%) 0.442 ms/op [Average]
+[info]   (min, avg, max) = (1.788, 2.335, 2.687), stdev = 0.292
+[info]   CI (99.9%): [1.893, 2.777] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.scalaStaging:gc.alloc.rate":
+[info]   1267.127 ±(99.9%) 272.837 MB/sec [Average]
+[info]   (min, avg, max) = (1083.992, 1267.127, 1628.164), stdev = 180.465
+[info]   CI (99.9%): [994.290, 1539.964] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.scalaStaging:gc.alloc.rate.norm":
+[info]   3053470.845 ±(99.9%) 3156.685 B/op [Average]
+[info]   (min, avg, max) = (3050276.430, 3053470.845, 3057082.386), stdev = 2087.951
+[info]   CI (99.9%): [3050314.160, 3056627.529] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.scalaStaging:gc.count":
+[info]   41.000 ±(99.9%) 0.001 counts [Sum]
+[info]   (min, avg, max) = (3.000, 4.100, 7.000), stdev = 1.197
+[info]   CI (99.9%): [41.000, 41.000] (assumes normal distribution)
+[info] Secondary result "konsume.bench.WarmCompilationBench.scalaStaging:gc.time":
+[info]   158.000 ±(99.9%) 0.001 ms [Sum]
+[info]   (min, avg, max) = (9.000, 15.800, 32.000), stdev = 8.587
+[info]   CI (99.9%): [158.000, 158.000] (assumes normal distribution)
+[info] # Run complete. Total time: 00:00:53
+[info] REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+[info] why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+[info] experiments, perform baseline and negative tests that provide experimental control, make sure
+[info] the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+[info] Do not assume the numbers tell you what you want them to tell.
+[info] NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+[info] extra caution when trusting the results, look into the generated code to check the benchmark still
+[info] works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+[info] different JVMs are already problematic, the performance difference caused by different Blackhole
+[info] modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+[info] Benchmark                                              Mode  Cnt        Score      Error   Units
+[info] WarmCompilationBench.javaClassfile                     avgt   10        0.017 ±    0.002   ms/op
+[info] WarmCompilationBench.javaClassfile:gc.alloc.rate       avgt   10     1935.595 ±  250.087  MB/sec
+[info] WarmCompilationBench.javaClassfile:gc.alloc.rate.norm  avgt   10    33792.131 ±   12.749    B/op
+[info] WarmCompilationBench.javaClassfile:gc.count            avgt   10       68.000             counts
+[info] WarmCompilationBench.javaClassfile:gc.time             avgt   10     1400.000                 ms
+[info] WarmCompilationBench.scalaStaging                      avgt   10        2.335 ±    0.442   ms/op
+[info] WarmCompilationBench.scalaStaging:gc.alloc.rate        avgt   10     1267.127 ±  272.837  MB/sec
+[info] WarmCompilationBench.scalaStaging:gc.alloc.rate.norm   avgt   10  3053470.845 ± 3156.685    B/op
+[info] WarmCompilationBench.scalaStaging:gc.count             avgt   10       41.000             counts
+[info] WarmCompilationBench.scalaStaging:gc.time              avgt   10      158.000                 ms
+[info] Benchmark result is saved to /Users/sderosiaux/code/personal/konsume/bench/results/optimization/warm-compilation.json
+[success] Total time: 54 s, completed Nov 18, 2026, 8:46:41 PM
+[info] running (fork) org.openjdk.jmh.Main -rf json -rff /Users/sderosiaux/code/personal/konsume/bench/results/optimization/cold-compilation.json konsume.bench.ColdCompilationBench.*
+[error] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[error] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[error] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[error] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[info] # JMH version: 1.37
+[info] # VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+[info] # VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+[info] # VM options: <none>
+[info] # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+[info] # Warmup: <none>
+[info] # Measurement: 1 iterations, single-shot each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread
+[info] # Benchmark mode: Single shot invocation time
+[info] # Benchmark: konsume.bench.ColdCompilationBench.javaClassfile
+[info] # Run progress: 0.00% complete, ETA 00:00:00
+[info] # Fork: 1 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 4.269 ms/op
+[info] # Run progress: 10.00% complete, ETA 00:00:02
+[info] # Fork: 2 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 4.228 ms/op
+[info] # Run progress: 20.00% complete, ETA 00:00:02
+[info] # Fork: 3 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 4.231 ms/op
+[info] # Run progress: 30.00% complete, ETA 00:00:02
+[info] # Fork: 4 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 4.344 ms/op
+[info] # Run progress: 40.00% complete, ETA 00:00:01
+[info] # Fork: 5 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 4.548 ms/op
+[info] Result "konsume.bench.ColdCompilationBench.javaClassfile":
+[info]   N = 5
+[info]   mean =      4.324 ±(99.9%) 0.514 ms/op
+[info]   Histogram, ms/op:
+[info]     [4.200, 4.225) = 0 
+[info]     [4.225, 4.250) = 2 
+[info]     [4.250, 4.275) = 1 
+[info]     [4.275, 4.300) = 0 
+[info]     [4.300, 4.325) = 0 
+[info]     [4.325, 4.350) = 1 
+[info]     [4.350, 4.375) = 0 
+[info]     [4.375, 4.400) = 0 
+[info]     [4.400, 4.425) = 0 
+[info]     [4.425, 4.450) = 0 
+[info]     [4.450, 4.475) = 0 
+[info]     [4.475, 4.500) = 0 
+[info]     [4.500, 4.525) = 0 
+[info]     [4.525, 4.550) = 1 
+[info]     [4.550, 4.575) = 0 
+[info]     [4.575, 4.600) = 0 
+[info]   Percentiles, ms/op:
+[info]       p(0.0000) =      4.228 ms/op
+[info]      p(50.0000) =      4.269 ms/op
+[info]      p(90.0000) =      4.548 ms/op
+[info]      p(95.0000) =      4.548 ms/op
+[info]      p(99.0000) =      4.548 ms/op
+[info]      p(99.9000) =      4.548 ms/op
+[info]      p(99.9900) =      4.548 ms/op
+[info]      p(99.9990) =      4.548 ms/op
+[info]      p(99.9999) =      4.548 ms/op
+[info]     p(100.0000) =      4.548 ms/op
+[info] # JMH version: 1.37
+[info] # VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+[info] # VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+[info] # VM options: <none>
+[info] # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+[info] # Warmup: <none>
+[info] # Measurement: 1 iterations, single-shot each
+[info] # Timeout: 10 min per iteration
+[info] # Threads: 1 thread
+[info] # Benchmark mode: Single shot invocation time
+[info] # Benchmark: konsume.bench.ColdCompilationBench.scalaStaging
+[info] # Run progress: 50.00% complete, ETA 00:00:01
+[info] # Fork: 1 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 949.349 ms/op
+[info] # Run progress: 60.00% complete, ETA 00:00:01
+[info] # Fork: 2 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 929.320 ms/op
+[info] # Run progress: 70.00% complete, ETA 00:00:01
+[info] # Fork: 3 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 931.231 ms/op
+[info] # Run progress: 80.00% complete, ETA 00:00:01
+[info] # Fork: 4 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 926.459 ms/op
+[info] # Run progress: 90.00% complete, ETA 00:00:00
+[info] # Fork: 5 of 5
+[info] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/code/personal/konsume/target/bg-jobs/sbt_19feb927/target/bd49fda3/1296d6b9/jmh-core-1.37.jar)
+[info] WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+[info] WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[error] SLF4J(W): No SLF4J providers were found.
+[error] SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+[error] SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Iteration   1: 942.915 ms/op
+[info] Result "konsume.bench.ColdCompilationBench.scalaStaging":
+[info]   N = 5
+[info]   mean =    935.855 ±(99.9%) 37.744 ms/op
+[info]   Histogram, ms/op:
+[info]     [920.000, 922.500) = 0 
+[info]     [922.500, 925.000) = 0 
+[info]     [925.000, 927.500) = 1 
+[info]     [927.500, 930.000) = 1 
+[info]     [930.000, 932.500) = 1 
+[info]     [932.500, 935.000) = 0 
+[info]     [935.000, 937.500) = 0 
+[info]     [937.500, 940.000) = 0 
+[info]     [940.000, 942.500) = 0 
+[info]     [942.500, 945.000) = 1 
+[info]     [945.000, 947.500) = 0 
+[info]   Percentiles, ms/op:
+[info]       p(0.0000) =    926.459 ms/op
+[info]      p(50.0000) =    931.231 ms/op
+[info]      p(90.0000) =    949.349 ms/op
+[info]      p(95.0000) =    949.349 ms/op
+[info]      p(99.0000) =    949.349 ms/op
+[info]      p(99.9000) =    949.349 ms/op
+[info]      p(99.9900) =    949.349 ms/op
+[info]      p(99.9990) =    949.349 ms/op
+[info]      p(99.9999) =    949.349 ms/op
+[info]     p(100.0000) =    949.349 ms/op
+[info] # Run complete. Total time: 00:00:07
+[info] REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+[info] why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+[info] experiments, perform baseline and negative tests that provide experimental control, make sure
+[info] the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+[info] Do not assume the numbers tell you what you want them to tell.
+[info] NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+[info] extra caution when trusting the results, look into the generated code to check the benchmark still
+[info] works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+[info] different JVMs are already problematic, the performance difference caused by different Blackhole
+[info] modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+[info] Benchmark                           Mode  Cnt    Score    Error  Units
+[info] ColdCompilationBench.javaClassfile    ss    5    4.324 ±  0.514  ms/op
+[info] ColdCompilationBench.scalaStaging     ss    5  935.855 ± 37.744  ms/op
+[info] Benchmark result is saved to /Users/sderosiaux/code/personal/konsume/bench/results/optimization/cold-compilation.json
+[success] Total time: 8 s, completed Nov 18, 2026, 8:46:49 PM
+[success] Total time: 0 s, completed Nov 18, 2026, 8:46:49 PM
+[success] Total time: 0 s, completed Nov 18, 2026, 8:46:49 PM
+[info] Wrote /Users/sderosiaux/code/personal/konsume/classfile/target/konsume-classfile-0.1.0-SNAPSHOT.pom
+[success] Total time: 0 s, completed Nov 18, 2026, 8:46:49 PM
+[info] * Attributed(/Users/sderosiaux/code/personal/konsume/classfile/target/classes)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/avro/avro/1.12.1/avro-1.12.1.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.20.0/jackson-core-2.20.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.20.0/jackson-databind-2.20.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar)
+[success] Total time: 0 s, completed Nov 18, 2026, 8:46:49 PM

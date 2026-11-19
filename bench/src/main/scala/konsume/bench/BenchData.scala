@@ -28,11 +28,12 @@ object BenchData:
 
   final case class Event(name: String, age: Int, country: String, items: Vector[Int])
 
-  val events: Vector[Event] =
+  /** Same deterministic stream for every batch size; larger datasets extend the 10k fixture. */
+  private[bench] def eventIterator(): Iterator[Event] =
     val rnd       = Random(42)
     val countries = Vector("FR", "US", "DE", "ES")
     val names     = Vector("john", "jane", "joe", "alice", "bob", "josephine")
-    Vector.fill(10_000)(
+    Iterator.continually(
       Event(
         names(rnd.nextInt(names.size)),
         rnd.nextInt(80),
@@ -40,6 +41,8 @@ object BenchData:
         Vector.fill(rnd.nextInt(5))(rnd.nextInt(100))
       )
     )
+
+  val events: Vector[Event] = eventIterator().take(10_000).toVector
 
   def json(e: Event): Json = Json.obj(
     "name"  -> Json.fromString(e.name),

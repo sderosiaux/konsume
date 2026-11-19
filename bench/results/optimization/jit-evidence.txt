@@ -1,0 +1,33 @@
+jit-pid25848.xml SHA256 51b6e533bb9bed1669d8ff1038723dca3ec72e26089a30968c64de372275b4b0
+  C2 #1812 at 0.313s: konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;
+    konsume.Record.value: inline_success (accessor)
+    konsume.classfile.CompiledAvroFilter/0x00001ff80117cc00.test: inline_success (inline (hot))
+    konsume.classfile.RestoredAvroCursor.<init>: inline_success (inline (hot))
+    konsume.classfile.RestoredAvroCursor.readLength: inline_success (inline (hot))
+    konsume.classfile.RestoredAvroCursor.readLong: inline_success (inline (hot))
+    konsume.classfile.RestoredAvroCursor.skip: inline_success (inline (hot))
+    konsume.classfile.RestoredAvroCursor.position: inline_success (accessor)
+    konsume.classfile.RestoredAvroCursor.utf8Equals: inline_success (inline (hot))
+    Eliminated allocations: konsume.classfile.RestoredAvroCursor
+  C2 #1850 at 7.613s: konsume.bench.OptimizationBench process (Lorg/openjdk/jmh/infra/Blackhole;)J
+    konsume.bench.OptimizationBench.engine: inline_success (accessor)
+    konsume.bench.OptimizationBench.scalaBatch: inline_fail (too big)
+    konsume.bench.OptimizationBench.javaBatch: inline_fail (already compiled into a big method)
+    Eliminated allocations: none
+
+jit-pid25859.xml SHA256 bbd7a61323146b372e96b882b799f85c67199e7280cf4924c2f4a8e7ee66367f
+  C2 #1821 at 0.291s: konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;
+    konsume.Record.value: inline_success (accessor)
+    konsume.classfile.CompiledAvroFilter/0x00003f000117cc00.test: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.<init>: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLength: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.readLong: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.skip: inline_success (inline (hot))
+    konsume.classfile.AvroCursor.position: inline_success (accessor)
+    Eliminated allocations: konsume.classfile.AvroCursor
+  C2 #1859 at 6.245s: konsume.bench.OptimizationBench process (Lorg/openjdk/jmh/infra/Blackhole;)J
+    konsume.bench.OptimizationBench.engine: inline_success (accessor)
+    konsume.bench.OptimizationBench.scalaBatch: inline_fail (too big)
+    konsume.bench.OptimizationBench.javaBatch: inline_fail (already compiled into a big method)
+    Eliminated allocations: none
+

@@ -1,0 +1,131 @@
+{
+  "sourceThread": "01a1f09a-1cde-7363-b586-99d9dca34374",
+  "baseCommit": "40cb154",
+  "note": "Source changes restored from completed fileChange records; BaselineAvroCursor restored from the historical copy operation. Historical raw JMH JSON is not reconstructed.",
+  "files": {
+    "build.sbt": {
+      "lastOrdinal": 169,
+      "sha256": "4a47d402d01842624ed091d773bd3934424b28637d958ac359ef0a8711e94e31"
+    },
+    "classfile/src/main/java/konsume/classfile/AvroCursor.java": {
+      "lastOrdinal": 641,
+      "sha256": "179533a7f4fcb135bdbc64308ec93153ef940eef905c650c127d87c4e45d59e7"
+    },
+    "classfile/src/main/java/konsume/classfile/AvroFilter.java": {
+      "lastOrdinal": 169,
+      "sha256": "36ba92c52a8d7029b41d364e39324d19a96228724576065dcc2298be4d3e00fe"
+    },
+    "classfile/src/main/java/konsume/classfile/AvroFilterCompiler.java": {
+      "lastOrdinal": 402,
+      "sha256": "cfba99f6aefd001b6ae6567ec03d0444fc8eabb3ba185785336c41413e14af2b"
+    },
+    "classfile/src/main/java/konsume/classfile/Filter.java": {
+      "lastOrdinal": 169,
+      "sha256": "1a2b212e6df3f6ca06e2ffa14a07b2517a267a9e3dcd0b0b5d3c0f0fa2672c7c"
+    },
+    "classfile/src/main/java/konsume/classfile/MalformedAvroException.java": {
+      "lastOrdinal": 169,
+      "sha256": "323aa047c3c1b37bd47049bb9ae528a9a65e7c3a18158b8b52a36bba2adcb8a3"
+    },
+    "core/src/main/scala/konsume/format/AvroStaged.scala": {
+      "lastOrdinal": 169,
+      "sha256": "ab60489c0ca66e189e8eed3042870586ed9d2028ff2a26df0a0a68cac16087d1"
+    },
+    "bench/src/main/java/konsume/classfile/HandwrittenAvroFilter.java": {
+      "lastOrdinal": 191,
+      "sha256": "c571fb2cba891ae51674ba1b9362919f37349181b252d72275e4c17aeab202df"
+    },
+    "bench/src/main/scala/konsume/bench/ClassfileBench.scala": {
+      "lastOrdinal": 191,
+      "sha256": "ded95aa032c0c29fe20998bd4285d0fd94f582627158ef91071ce17047fc2583"
+    },
+    "bench/src/main/scala/konsume/bench/CompilationBench.scala": {
+      "lastOrdinal": 297,
+      "sha256": "6ddb52c0f303ad67598b99b80f344beaf31d95267c4eeea97a6529d4abe7e540"
+    },
+    "bench/src/test/scala/konsume/bench/ClassfileDifferentialSuite.scala": {
+      "lastOrdinal": 191,
+      "sha256": "b0a215eb8d250e9fe32adb026ee51a97257e64fdcff81346eeae6452a2e6daad"
+    },
+    "classfile/src/test/java/konsume/classfile/AvroFilterCompilerTest.java": {
+      "lastOrdinal": 191,
+      "sha256": "0ff2b0769398e22c020fa466f853d9ec651936e1448c41f7365dea9ce1b1304e"
+    },
+    "README.md": {
+      "lastOrdinal": 215,
+      "sha256": "1b3e9d30a4f7a46721555ed08ad43f61290e16ef5ff8e14c6668f050acc59176"
+    },
+    "classfile/README.md": {
+      "lastOrdinal": 957,
+      "sha256": "fb0e123252f224d182bde85a2089dac9010d2d935eb145f16429453172e22f09"
+    },
+    "bench/src/main/java/konsume/classfile/FastAvroCursor.java": {
+      "lastOrdinal": 402,
+      "sha256": "22071f79ea81919f8f19f1760c5608546a9715d4875b42bc172e468d6940617f"
+    },
+    "bench/src/main/java/konsume/classfile/InvestigationFilters.java": {
+      "lastOrdinal": 641,
+      "sha256": "fae22406654f6b2120f6271c96140c8b840cecf5dff0e03e864de43fc1a34cb7"
+    },
+    "bench/src/main/scala/konsume/bench/InvestigationBench.scala": {
+      "lastOrdinal": 402,
+      "sha256": "26e1e5fd31f44448ea32626e3608052e3947fb64f5cad22d3686a6b6ef452aaf"
+    },
+    "bench/src/test/scala/konsume/bench/InvestigationSuite.scala": {
+      "lastOrdinal": 641,
+      "sha256": "31e2b75e22156b1eac798103941329db8c84dc9a891f584026333b766d32af85"
+    },
+    "bench/src/main/scala/konsume/bench/InspectInvestigation.scala": {
+      "lastOrdinal": 424,
+      "sha256": "8b242d3cac54012cf7bdb25149c9fa3a368f43c5fbaeafb987c2264a73c54ff9"
+    },
+    "bench/src/main/java/konsume/classfile/PeeledAvroCursor.java": {
+      "lastOrdinal": 505,
+      "sha256": "74ad2ae3d31366d27682e43980a93a0339b830972550de416875c09c0fc62554"
+    },
+    "bench/src/main/scala/konsume/bench/PredicateInvestigationBench.scala": {
+      "lastOrdinal": 505,
+      "sha256": "ef057b95efb204fd7ad8654b8a02fd55cbf23da13c0f1371202766877b79477e"
+    },
+    "bench/src/test/scala/konsume/classfile/CursorDifferentialSuite.scala": {
+      "lastOrdinal": 641,
+      "sha256": "133d8db56eef05aa7bc453de237fadad2d6c0c1c6cce825677ff1c3d6a6f898d"
+    },
+    "bench/src/main/java/konsume/classfile/ArrayBoundedCursor.java": {
+      "lastOrdinal": 591,
+      "sha256": "768c6a728b7e0b5bb0a4ecbdbcf2404deed92ade27f972956c45fee08c9edb10"
+    },
+    "bench/scripts/summarize_jit.py": {
+      "lastOrdinal": 600,
+      "sha256": "11223ba97f2a06eaa6b589da7b37b9f7bd03490b6afd89959b209109fbb42b9c"
+    },
+    "bench/src/main/java/konsume/classfile/BaselineAvroCursor.java": {
+      "lastOrdinal": 640,
+      "sha256": "f2d387b904271b0e015dcd4cf5cb815f97e3878bd935bf66c974cd014262cb52"
+    },
+    "bench/src/main/scala/konsume/bench/BenchData.scala": {
+      "lastOrdinal": 815,
+      "sha256": "d96c42b664f75b7bd2ad0d95121130143851662d094a47ceae5b0602fe98ccb0"
+    },
+    "bench/src/main/scala/konsume/bench/ScalingData.scala": {
+      "lastOrdinal": 815,
+      "sha256": "eed06f499644bcf79ace27db686c1fe467a16cc148bff3d73c1539896301c6de"
+    },
+    "bench/src/main/scala/konsume/bench/SustainedBench.scala": {
+      "lastOrdinal": 815,
+      "sha256": "001b6880f3604c22917428b61257e536a8d62fbeca8ac85192e0edcc69ed93b7"
+    },
+    "bench/src/test/scala/konsume/bench/ScalingDataSuite.scala": {
+      "lastOrdinal": 815,
+      "sha256": "1fbea336cbf13111d7e58b0181bab438b370b260d57fb57c60871a602fe75840"
+    },
+    "bench/results/scaling/README.md": {
+      "lastOrdinal": 1047,
+      "sha256": "54c1df3897a48c15fab81eaa4caa11545112e0899da1f1e1257d991a53df38b3"
+    },
+    "bench/scripts/summarize_sustained.py": {
+      "lastOrdinal": 884,
+      "sha256": "22476dd90e8394c97bd8d2d458d488ce1119eccfa989016fb05995629eeadf17"
+    }
+  }
+}

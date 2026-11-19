@@ -33,12 +33,13 @@ object AvroStaged:
   private val cache = ConcurrentHashMap[(Jq, Schema), Fn]()
 
   def compile(program: Jq, schema: Schema): Fn =
-    cache.computeIfAbsent((program, schema), _ => build(program, schema))
+    cache.computeIfAbsent((program, schema), _ => compileUncached(program, schema))
 
   /** The generated code, for debugging. */
   def show(program: Jq, schema: Schema): String = StagingCompiler.show(code(program, schema, ArrayBuffer.empty))
 
-  private def build(program: Jq, schema: Schema): Fn =
+  /** Internal entry point for measuring actual compilation, without cache hits or cache growth. */
+  private[konsume] def compileUncached(program: Jq, schema: Schema): Fn =
     val schemas = ArrayBuffer.empty[Schema]
     StagingCompiler.run(code(program, schema, schemas))(schemas.toArray)
 

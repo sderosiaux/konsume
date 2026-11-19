@@ -1,0 +1,103 @@
+{
+  "samples": 135,
+  "minSeconds": 1.392844458,
+  "maxSeconds": 4.929031834,
+  "datasets": {
+    "10000": {
+      "optimized": {
+        "seconds": 1.4471414612,
+        "jvmMeans": [
+          1.4365448586,
+          1.4230807166,
+          1.4817988084000002
+        ],
+        "allocationBytesPerRecord": 1.6552226879999998,
+        "microsecondsPerPass": 48.238048706666675
+      },
+      "restored": {
+        "seconds": 1.7629272278666668,
+        "jvmMeans": [
+          1.7362460502000001,
+          1.7262974251999998,
+          1.8262382082000002
+        ],
+        "allocationBytesPerRecord": 1.6552226879999998,
+        "microsecondsPerPass": 58.76424092888889
+      },
+      "scala": {
+        "seconds": 1.7895981833999999,
+        "jvmMeans": [
+          1.8101472249999997,
+          1.7557278667999998,
+          1.8029194584000003
+        ],
+        "allocationBytesPerRecord": 1.6552226879999998,
+        "microsecondsPerPass": 59.653272779999995
+      }
+    },
+    "100000": {
+      "optimized": {
+        "seconds": 3.289298864,
+        "jvmMeans": [
+          3.3590196501999996,
+          3.3793913416000003,
+          3.1294856002
+        ],
+        "allocationBytesPerRecord": 1.3129026879999999,
+        "microsecondsPerPass": 1096.4329546666668
+      },
+      "restored": {
+        "seconds": 3.2981408860666663,
+        "jvmMeans": [
+          3.1740969831999997,
+          3.4608696666,
+          3.2594560084
+        ],
+        "allocationBytesPerRecord": 1.3129026879999999,
+        "microsecondsPerPass": 1099.3802953555555
+      },
+      "scala": {
+        "seconds": 4.049732847466666,
+        "jvmMeans": [
+          3.851484667,
+          4.243892325199999,
+          4.0538215502
+        ],
+        "allocationBytesPerRecord": 1.3129026506666666,
+        "microsecondsPerPass": 1349.9109491555553
+      }
+    },
+    "1000000": {
+      "optimized": {
+        "seconds": 4.241865866733333,
+        "jvmMeans": [
+          4.1192346082,
+          4.392496158399999,
+          4.2138668336
+        ],
+        "allocationBytesPerRecord": 2.0974548,
+        "microsecondsPerPass": 14139.552889111112
+      },
+      "restored": {
+        "seconds": 4.480895508333333,
+        "jvmMeans": [
+          4.4412299584,
+          4.5696458,
+          4.4318107666
+        ],
+        "allocationBytesPerRecord": 2.0974547875555554,
+        "microsecondsPerPass": 14936.31836111111
+      },
+      "scala": {
+        "seconds": 4.7624318750666665,
+        "jvmMeans": [
+          4.6383695582,
+          4.8716376418000005,
+          4.7772884252
+        ],
+        "allocationBytesPerRecord": 2.0974548,
+        "microsecondsPerPass": 15874.77291688889
+      }
+    }
+  }
+}

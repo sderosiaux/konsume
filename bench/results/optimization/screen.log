@@ -1,0 +1,16 @@
+Starting round-1-10000-restored
+Completed round-1-10000-restored: 1.786974 s/op
+Starting round-1-10000-literalOnly
+Completed round-1-10000-literalOnly: 1.456759 s/op
+Starting round-1-10000-cursorOnly
+Completed round-1-10000-cursorOnly: 1.772450 s/op
+Starting round-1-10000-optimized
+Completed round-1-10000-optimized: 1.445850 s/op
+Starting round-2-10000-literalOnly
+Completed round-2-10000-literalOnly: 1.459626 s/op
+Starting round-2-10000-cursorOnly
+Completed round-2-10000-cursorOnly: 1.756525 s/op
+Starting round-2-10000-optimized
+Completed round-2-10000-optimized: 1.422272 s/op
+Starting round-2-10000-restored
+Completed round-2-10000-restored: 1.762555 s/op

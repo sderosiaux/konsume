@@ -7,6 +7,10 @@ Scala 3 library to consume Kafka topics, with record processing configured at ru
 For now only the pure part exists: `Pipeline[K, V, K2, V2]`, a function from a batch of records
 (`Iterable[Record[K, V]]`, what a `poll` returns) to the records to emit.
 
+An independent [Java Class-File API prototype](classfile/README.md) implements the Avro scalar-filter
+use case as an embeddable Java 24+ library. Its JAR has no Scala or JMH dependency; the separate
+benchmark module compares it with the staged Scala implementation.
+
 ```scala
 val pipeline = Pipeline
   .fromConfig[String](ConsumeConfig(Seq("users"), jq = Some("""select(.age > 30 and .country == "FR")""")))

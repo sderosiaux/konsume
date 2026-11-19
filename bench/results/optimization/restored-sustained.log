@@ -1,0 +1,641 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, single-shot each
+# Measurement: 3 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.SustainedBench.process
+# Parameters: (batchSize = 10000, engine = scala)
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sustained: scala, 10000 distinct records, 193331 payload bytes, 1521 retained/pass, 30000 passes = 300000000 records/invocation
+1.841 s/op
+# Warmup Iteration   2: 1.821 s/op
+# Warmup Iteration   3: 1.743 s/op
+# Warmup Iteration   4: 1.760 s/op
+Iteration   1: 1.771 s/op
+                 gc.alloc.rate:      267.360 MB/sec
+                 gc.alloc.rate.norm: 496566840.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            6.000 ms
+
+Iteration   2: 1.725 s/op
+                 gc.alloc.rate:      274.558 MB/sec
+                 gc.alloc.rate.norm: 496566784.000 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 1.766 s/op
+                 gc.alloc.rate:      268.060 MB/sec
+                 gc.alloc.rate.norm: 496566840.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            6.000 ms
+
+
+
+Result "konsume.bench.SustainedBench.process":
+  N = 3
+  mean =      1.754 ±(99.9%) 0.467 s/op
+
+  Histogram, s/op:
+    [1.720, 1.725) = 1 
+    [1.725, 1.730) = 0 
+    [1.730, 1.735) = 0 
+    [1.735, 1.740) = 0 
+    [1.740, 1.745) = 0 
+    [1.745, 1.750) = 0 
+    [1.750, 1.755) = 0 
+    [1.755, 1.760) = 0 
+    [1.760, 1.765) = 0 
+    [1.765, 1.770) = 1 
+    [1.770, 1.775) = 1 
+    [1.775, 1.780) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      1.725 s/op
+     p(50.0000) =      1.766 s/op
+     p(90.0000) =      1.771 s/op
+     p(95.0000) =      1.771 s/op
+     p(99.0000) =      1.771 s/op
+     p(99.9000) =      1.771 s/op
+     p(99.9900) =      1.771 s/op
+     p(99.9990) =      1.771 s/op
+     p(99.9999) =      1.771 s/op
+    p(100.0000) =      1.771 s/op
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate":
+  269.992 ±(99.9%) 72.408 MB/sec [Average]
+  (min, avg, max) = (267.360, 269.992, 274.558), stdev = 3.969
+  CI (99.9%): [197.585, 342.400] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate.norm":
+  496566821.333 ±(99.9%) 589.849 B/op [Average]
+  (min, avg, max) = (496566784.000, 496566821.333, 496566840.000), stdev = 32.332
+  CI (99.9%): [496566231.484, 496567411.182] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.count":
+  2.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (≈ 0, 0.667, 1.000), stdev = 0.577
+  CI (99.9%): [2.000, 2.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.time":
+  12.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (≈ 0, 4.000, 6.000), stdev = 3.464
+  CI (99.9%): [12.000, 12.000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, single-shot each
+# Measurement: 3 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.SustainedBench.process
+# Parameters: (batchSize = 10000, engine = classfile)
+
+# Run progress: 16.67% complete, ETA 00:01:08
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sustained: classfile, 10000 distinct records, 193331 payload bytes, 1521 retained/pass, 30000 passes = 300000000 records/invocation
+1.864 s/op
+# Warmup Iteration   2: 1.770 s/op
+# Warmup Iteration   3: 1.770 s/op
+# Warmup Iteration   4: 1.761 s/op
+Iteration   1: 1.736 s/op
+                 gc.alloc.rate:      272.773 MB/sec
+                 gc.alloc.rate.norm: 496566840.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            2.000 ms
+
+Iteration   2: 1.765 s/op
+                 gc.alloc.rate:      268.344 MB/sec
+                 gc.alloc.rate.norm: 496566784.000 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 1.787 s/op
+                 gc.alloc.rate:      265.019 MB/sec
+                 gc.alloc.rate.norm: 496566840.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            2.000 ms
+
+
+
+Result "konsume.bench.SustainedBench.process":
+  N = 3
+  mean =      1.762 ±(99.9%) 0.465 s/op
+
+  Histogram, s/op:
+    [1.730, 1.735) = 0 
+    [1.735, 1.740) = 1 
+    [1.740, 1.745) = 0 
+    [1.745, 1.750) = 0 
+    [1.750, 1.755) = 0 
+    [1.755, 1.760) = 0 
+    [1.760, 1.765) = 1 
+    [1.765, 1.770) = 0 
+    [1.770, 1.775) = 0 
+    [1.775, 1.780) = 0 
+    [1.780, 1.785) = 0 
+    [1.785, 1.790) = 1 
+
+  Percentiles, s/op:
+      p(0.0000) =      1.736 s/op
+     p(50.0000) =      1.765 s/op
+     p(90.0000) =      1.787 s/op
+     p(95.0000) =      1.787 s/op
+     p(99.0000) =      1.787 s/op
+     p(99.9000) =      1.787 s/op
+     p(99.9900) =      1.787 s/op
+     p(99.9990) =      1.787 s/op
+     p(99.9999) =      1.787 s/op
+    p(100.0000) =      1.787 s/op
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate":
+  268.712 ±(99.9%) 70.966 MB/sec [Average]
+  (min, avg, max) = (265.019, 268.712, 272.773), stdev = 3.890
+  CI (99.9%): [197.746, 339.678] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate.norm":
+  496566821.333 ±(99.9%) 589.849 B/op [Average]
+  (min, avg, max) = (496566784.000, 496566821.333, 496566840.000), stdev = 32.332
+  CI (99.9%): [496566231.484, 496567411.182] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.count":
+  2.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (≈ 0, 0.667, 1.000), stdev = 0.577
+  CI (99.9%): [2.000, 2.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.time":
+  4.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (≈ 0, 1.333, 2.000), stdev = 1.155
+  CI (99.9%): [4.000, 4.000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, single-shot each
+# Measurement: 3 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.SustainedBench.process
+# Parameters: (batchSize = 100000, engine = scala)
+
+# Run progress: 33.33% complete, ETA 00:00:52
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sustained: scala, 100000 distinct records, 1937709 payload bytes, 15279 retained/pass, 3000 passes = 300000000 records/invocation
+4.247 s/op
+# Warmup Iteration   2: 4.254 s/op
+# Warmup Iteration   3: 4.215 s/op
+# Warmup Iteration   4: 4.142 s/op
+Iteration   1: 4.250 s/op
+                 gc.alloc.rate:      88.382 MB/sec
+                 gc.alloc.rate.norm: 393870784.000 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   2: 4.204 s/op
+                 gc.alloc.rate:      89.356 MB/sec
+                 gc.alloc.rate.norm: 393870840.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            6.000 ms
+
+Iteration   3: 4.279 s/op
+                 gc.alloc.rate:      87.777 MB/sec
+                 gc.alloc.rate.norm: 393870784.000 B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "konsume.bench.SustainedBench.process":
+  N = 3
+  mean =      4.244 ±(99.9%) 0.696 s/op
+
+  Histogram, s/op:
+    [4.200, 4.205) = 1 
+    [4.205, 4.210) = 0 
+    [4.210, 4.215) = 0 
+    [4.215, 4.220) = 0 
+    [4.220, 4.225) = 0 
+    [4.225, 4.230) = 0 
+    [4.230, 4.235) = 0 
+    [4.235, 4.240) = 0 
+    [4.240, 4.245) = 0 
+    [4.245, 4.250) = 1 
+    [4.250, 4.255) = 0 
+    [4.255, 4.260) = 0 
+    [4.260, 4.265) = 0 
+    [4.265, 4.270) = 0 
+    [4.270, 4.275) = 0 
+    [4.275, 4.280) = 1 
+
+  Percentiles, s/op:
+      p(0.0000) =      4.204 s/op
+     p(50.0000) =      4.250 s/op
+     p(90.0000) =      4.279 s/op
+     p(95.0000) =      4.279 s/op
+     p(99.0000) =      4.279 s/op
+     p(99.9000) =      4.279 s/op
+     p(99.9900) =      4.279 s/op
+     p(99.9990) =      4.279 s/op
+     p(99.9999) =      4.279 s/op
+    p(100.0000) =      4.279 s/op
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate":
+  88.505 ±(99.9%) 14.543 MB/sec [Average]
+  (min, avg, max) = (87.777, 88.505, 89.356), stdev = 0.797
+  CI (99.9%): [73.962, 103.048] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate.norm":
+  393870802.667 ±(99.9%) 589.849 B/op [Average]
+  (min, avg, max) = (393870784.000, 393870802.667, 393870840.000), stdev = 32.332
+  CI (99.9%): [393870212.818, 393871392.516] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.count":
+  1.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (≈ 0, 0.333, 1.000), stdev = 0.577
+  CI (99.9%): [1.000, 1.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.time":
+  6.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (≈ 0, 2.000, 6.000), stdev = 3.464
+  CI (99.9%): [6.000, 6.000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, single-shot each
+# Measurement: 3 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.SustainedBench.process
+# Parameters: (batchSize = 100000, engine = classfile)
+
+# Run progress: 50.00% complete, ETA 00:00:57
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sustained: classfile, 100000 distinct records, 1937709 payload bytes, 15279 retained/pass, 3000 passes = 300000000 records/invocation
+15.724 s/op
+# Warmup Iteration   2: 5.621 s/op
+# Warmup Iteration   3: 3.541 s/op
+# Warmup Iteration   4: 3.452 s/op
+Iteration   1: 3.690 s/op
+                 gc.alloc.rate:      101.786 MB/sec
+                 gc.alloc.rate.norm: 393870840.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            5.000 ms
+
+Iteration   2: 3.753 s/op
+                 gc.alloc.rate:      100.080 MB/sec
+                 gc.alloc.rate.norm: 393870784.000 B/op
+                 gc.count:           ≈ 0 counts
+
+Iteration   3: 3.577 s/op
+                 gc.alloc.rate:      105.019 MB/sec
+                 gc.alloc.rate.norm: 393870784.000 B/op
+                 gc.count:           ≈ 0 counts
+
+
+
+Result "konsume.bench.SustainedBench.process":
+  N = 3
+  mean =      3.673 ±(99.9%) 1.632 s/op
+
+  Histogram, s/op:
+    [3.500, 3.525) = 0 
+    [3.525, 3.550) = 0 
+    [3.550, 3.575) = 0 
+    [3.575, 3.600) = 1 
+    [3.600, 3.625) = 0 
+    [3.625, 3.650) = 0 
+    [3.650, 3.675) = 0 
+    [3.675, 3.700) = 1 
+    [3.700, 3.725) = 0 
+    [3.725, 3.750) = 0 
+    [3.750, 3.775) = 1 
+    [3.775, 3.800) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      3.577 s/op
+     p(50.0000) =      3.690 s/op
+     p(90.0000) =      3.753 s/op
+     p(95.0000) =      3.753 s/op
+     p(99.0000) =      3.753 s/op
+     p(99.9000) =      3.753 s/op
+     p(99.9900) =      3.753 s/op
+     p(99.9990) =      3.753 s/op
+     p(99.9999) =      3.753 s/op
+    p(100.0000) =      3.753 s/op
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate":
+  102.295 ±(99.9%) 45.772 MB/sec [Average]
+  (min, avg, max) = (100.080, 102.295, 105.019), stdev = 2.509
+  CI (99.9%): [56.523, 148.067] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate.norm":
+  393870802.667 ±(99.9%) 589.849 B/op [Average]
+  (min, avg, max) = (393870784.000, 393870802.667, 393870840.000), stdev = 32.332
+  CI (99.9%): [393870212.818, 393871392.516] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.count":
+  1.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (≈ 0, 0.333, 1.000), stdev = 0.577
+  CI (99.9%): [1.000, 1.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.time":
+  5.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (≈ 0, 1.667, 5.000), stdev = 2.887
+  CI (99.9%): [5.000, 5.000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, single-shot each
+# Measurement: 3 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.SustainedBench.process
+# Parameters: (batchSize = 1000000, engine = scala)
+
+# Run progress: 66.67% complete, ETA 00:00:48
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sustained: scala, 1000000 distinct records, 19392321 payload bytes, 152690 retained/pass, 300 passes = 300000000 records/invocation
+4.916 s/op
+# Warmup Iteration   2: 4.912 s/op
+# Warmup Iteration   3: 4.825 s/op
+# Warmup Iteration   4: 4.783 s/op
+Iteration   1: 4.791 s/op
+                 gc.alloc.rate:      125.246 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            15.000 ms
+
+Iteration   2: 4.816 s/op
+                 gc.alloc.rate:      124.587 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           4.000 counts
+                 gc.time:            31.000 ms
+
+Iteration   3: 4.812 s/op
+                 gc.alloc.rate:      124.715 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            15.000 ms
+
+
+
+Result "konsume.bench.SustainedBench.process":
+  N = 3
+  mean =      4.806 ±(99.9%) 0.245 s/op
+
+  Histogram, s/op:
+    [4.790, 4.793) = 1 
+    [4.793, 4.795) = 0 
+    [4.795, 4.798) = 0 
+    [4.798, 4.800) = 0 
+    [4.800, 4.803) = 0 
+    [4.803, 4.805) = 0 
+    [4.805, 4.808) = 0 
+    [4.808, 4.810) = 0 
+    [4.810, 4.813) = 1 
+    [4.813, 4.815) = 0 
+    [4.815, 4.818) = 1 
+    [4.818, 4.820) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      4.791 s/op
+     p(50.0000) =      4.812 s/op
+     p(90.0000) =      4.816 s/op
+     p(95.0000) =      4.816 s/op
+     p(99.0000) =      4.816 s/op
+     p(99.9000) =      4.816 s/op
+     p(99.9900) =      4.816 s/op
+     p(99.9990) =      4.816 s/op
+     p(99.9999) =      4.816 s/op
+    p(100.0000) =      4.816 s/op
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate":
+  124.849 ±(99.9%) 6.377 MB/sec [Average]
+  (min, avg, max) = (124.587, 124.849, 125.246), stdev = 0.350
+  CI (99.9%): [118.472, 131.226] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate.norm":
+  629236440.000 ±(99.9%) 0.001 B/op [Average]
+  (min, avg, max) = (629236440.000, 629236440.000, 629236440.000), stdev = 0.001
+  CI (99.9%): [629236440.000, 629236440.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.count":
+  6.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (1.000, 2.000, 4.000), stdev = 1.732
+  CI (99.9%): [6.000, 6.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.time":
+  61.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (15.000, 20.333, 31.000), stdev = 9.238
+  CI (99.9%): [61.000, 61.000] (assumes normal distribution)
+
+
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -Xms2g -Xmx2g
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 4 iterations, single-shot each
+# Measurement: 3 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.SustainedBench.process
+# Parameters: (batchSize = 1000000, engine = classfile)
+
+# Run progress: 83.33% complete, ETA 00:00:26
+# Fork: 1 of 1
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+# Warmup Iteration   1: SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Sustained: classfile, 1000000 distinct records, 19392321 payload bytes, 152690 retained/pass, 300 passes = 300000000 records/invocation
+5.042 s/op
+# Warmup Iteration   2: 4.487 s/op
+# Warmup Iteration   3: 4.538 s/op
+# Warmup Iteration   4: 4.549 s/op
+Iteration   1: 4.504 s/op
+                 gc.alloc.rate:      133.218 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           4.000 counts
+                 gc.time:            26.000 ms
+
+Iteration   2: 4.532 s/op
+                 gc.alloc.rate:      132.411 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           1.000 counts
+                 gc.time:            16.000 ms
+
+Iteration   3: 4.519 s/op
+                 gc.alloc.rate:      132.775 MB/sec
+                 gc.alloc.rate.norm: 629236440.000 B/op
+                 gc.count:           4.000 counts
+                 gc.time:            26.000 ms
+
+
+
+Result "konsume.bench.SustainedBench.process":
+  N = 3
+  mean =      4.519 ±(99.9%) 0.251 s/op
+
+  Histogram, s/op:
+    [4.500, 4.503) = 0 
+    [4.503, 4.505) = 1 
+    [4.505, 4.508) = 0 
+    [4.508, 4.510) = 0 
+    [4.510, 4.513) = 0 
+    [4.513, 4.515) = 0 
+    [4.515, 4.518) = 0 
+    [4.518, 4.520) = 1 
+    [4.520, 4.523) = 0 
+    [4.523, 4.525) = 0 
+    [4.525, 4.528) = 0 
+    [4.528, 4.530) = 0 
+    [4.530, 4.533) = 1 
+    [4.533, 4.535) = 0 
+    [4.535, 4.538) = 0 
+    [4.538, 4.540) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      4.504 s/op
+     p(50.0000) =      4.519 s/op
+     p(90.0000) =      4.532 s/op
+     p(95.0000) =      4.532 s/op
+     p(99.0000) =      4.532 s/op
+     p(99.9000) =      4.532 s/op
+     p(99.9900) =      4.532 s/op
+     p(99.9990) =      4.532 s/op
+     p(99.9999) =      4.532 s/op
+    p(100.0000) =      4.532 s/op
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate":
+  132.801 ±(99.9%) 7.376 MB/sec [Average]
+  (min, avg, max) = (132.411, 132.801, 133.218), stdev = 0.404
+  CI (99.9%): [125.425, 140.177] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.alloc.rate.norm":
+  629236440.000 ±(99.9%) 0.001 B/op [Average]
+  (min, avg, max) = (629236440.000, 629236440.000, 629236440.000), stdev = 0.001
+  CI (99.9%): [629236440.000, 629236440.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.count":
+  9.000 ±(99.9%) 0.001 counts [Sum]
+  (min, avg, max) = (1.000, 3.000, 4.000), stdev = 1.732
+  CI (99.9%): [9.000, 9.000] (assumes normal distribution)
+
+Secondary result "konsume.bench.SustainedBench.process:gc.time":
+  68.000 ±(99.9%) 0.001 ms [Sum]
+  (min, avg, max) = (16.000, 22.667, 26.000), stdev = 5.774
+  CI (99.9%): [68.000, 68.000] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:02:46
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                                  (batchSize)   (engine)  Mode  Cnt          Score     Error   Units
+SustainedBench.process                           10000      scala    ss    3          1.754 ±   0.467    s/op
+SustainedBench.process:gc.alloc.rate             10000      scala    ss    3        269.992 ±  72.408  MB/sec
+SustainedBench.process:gc.alloc.rate.norm        10000      scala    ss    3  496566821.333 ± 589.849    B/op
+SustainedBench.process:gc.count                  10000      scala    ss    3          2.000            counts
+SustainedBench.process:gc.time                   10000      scala    ss    3         12.000                ms
+SustainedBench.process                           10000  classfile    ss    3          1.762 ±   0.465    s/op
+SustainedBench.process:gc.alloc.rate             10000  classfile    ss    3        268.712 ±  70.966  MB/sec
+SustainedBench.process:gc.alloc.rate.norm        10000  classfile    ss    3  496566821.333 ± 589.849    B/op
+SustainedBench.process:gc.count                  10000  classfile    ss    3          2.000            counts
+SustainedBench.process:gc.time                   10000  classfile    ss    3          4.000                ms
+SustainedBench.process                          100000      scala    ss    3          4.244 ±   0.696    s/op
+SustainedBench.process:gc.alloc.rate            100000      scala    ss    3         88.505 ±  14.543  MB/sec
+SustainedBench.process:gc.alloc.rate.norm       100000      scala    ss    3  393870802.667 ± 589.849    B/op
+SustainedBench.process:gc.count                 100000      scala    ss    3          1.000            counts
+SustainedBench.process:gc.time                  100000      scala    ss    3          6.000                ms
+SustainedBench.process                          100000  classfile    ss    3          3.673 ±   1.632    s/op
+SustainedBench.process:gc.alloc.rate            100000  classfile    ss    3        102.295 ±  45.772  MB/sec
+SustainedBench.process:gc.alloc.rate.norm       100000  classfile    ss    3  393870802.667 ± 589.849    B/op
+SustainedBench.process:gc.count                 100000  classfile    ss    3          1.000            counts
+SustainedBench.process:gc.time                  100000  classfile    ss    3          5.000                ms
+SustainedBench.process                         1000000      scala    ss    3          4.806 ±   0.245    s/op
+SustainedBench.process:gc.alloc.rate           1000000      scala    ss    3        124.849 ±   6.377  MB/sec
+SustainedBench.process:gc.alloc.rate.norm      1000000      scala    ss    3  629236440.000 ±   0.001    B/op
+SustainedBench.process:gc.count                1000000      scala    ss    3          6.000            counts
+SustainedBench.process:gc.time                 1000000      scala    ss    3         61.000                ms
+SustainedBench.process                         1000000  classfile    ss    3          4.519 ±   0.251    s/op
+SustainedBench.process:gc.alloc.rate           1000000  classfile    ss    3        132.801 ±   7.376  MB/sec
+SustainedBench.process:gc.alloc.rate.norm      1000000  classfile    ss    3  629236440.000 ±   0.001    B/op
+SustainedBench.process:gc.count                1000000  classfile    ss    3          9.000            counts
+SustainedBench.process:gc.time                 1000000  classfile    ss    3         68.000                ms
+
+Benchmark result is saved to /Users/sderosiaux/code/personal/konsume/bench/results/optimization/restored-sustained.json

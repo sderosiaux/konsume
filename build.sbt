@@ -6,7 +6,7 @@ ThisBuild / scalacOptions ++= Seq("-deprecation", "-feature", "-Wunused:all")
 val circeVersion = "0.14.15"
 
 lazy val root = (project in file("."))
-  .aggregate(core, bench)
+  .aggregate(core, classfile, bench)
   .settings(publish / skip := true)
 
 lazy val core = (project in file("core"))
@@ -26,7 +26,26 @@ lazy val core = (project in file("core"))
     run / fork  := true
   )
 
+// A Java-only artifact: no scala-library, staging compiler, Kafka client or JMH dependency.
+lazy val classfile = (project in file("classfile"))
+  .settings(
+    name := "konsume-classfile",
+    autoScalaLibrary := false,
+    crossPaths := false,
+    javacOptions ++= Seq("--release", "24", "-Xlint:all"),
+    libraryDependencies ++= Seq(
+      "org.apache.avro" % "avro" % "1.12.1",
+      "junit" % "junit" % "4.13.2" % Test,
+      "com.github.sbt" % "junit-interface" % "0.13.3" % Test
+    ),
+    Test / fork := true
+  )
+
 lazy val bench = (project in file("bench"))
-  .dependsOn(core)
+  .dependsOn(core, classfile)
   .enablePlugins(JmhPlugin)
-  .settings(publish / skip := true)
+  .settings(
+    publish / skip := true,
+    libraryDependencies += "org.scalameta" %% "munit" % "1.2.4" % Test,
+    Test / fork := true
+  )

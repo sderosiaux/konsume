@@ -1,0 +1,27 @@
+--- recovered/AvroFilterCompiler.java
++++ optimized/AvroFilterCompiler.java
+@@ -209,8 +209,23 @@
+             }
+             case Filter.StringEquality f -> {
+                 Local value = values.get(f.path());
++                byte[] literal = f.value().getBytes(StandardCharsets.UTF_8);
++                // The literal is known when generating the filter. For short strings,
++                // expose its length and bytes as constants instead of loading a byte[]
++                // and invoking the general range-comparison routine for every record.
++                // The reading plan has already validated the complete string slice.
++                if (literal.length <= 8) {
++                    c.iload(value.second()).loadConstant(literal.length).if_icmpne(no);
++                    for (int i = 0; i < literal.length; i++) {
++                        c.aload(1).iload(value.first());
++                        if (i != 0) c.loadConstant(i).iadd();
++                        c.baload().loadConstant((int) literal[i]).if_icmpne(no);
++                    }
++                    c.goto_(yes);
++                    break;
++                }
+                 int index = literals.size();
+-                literals.add(f.value().getBytes(StandardCharsets.UTF_8));
++                literals.add(literal);
+                 c.aload(1).iload(value.first()).iload(value.second())
+                     .aload(0).getfield(GENERATED, "literals", LITERALS).loadConstant(index).aaload()
+                     .invokestatic(CURSOR, "utf8Equals", MethodTypeDesc.of(CD_boolean, BYTES, CD_int, CD_int, BYTES))
