@@ -55,5 +55,108 @@
     ]
   ],
   "started_at": "2026-11-18T22:58:52-0500",
-  "completed_at": "2026-11-18T22:59:58-0500"
+  "completed_at": "2026-11-18T22:59:58-0500",
+  "conversion_commands": [
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 10000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/cpu.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 10000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/cpu.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 10000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/alloc.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 10000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/alloc.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--bci",
+      "--norm",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/cpu-bci.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 1000000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/cpu.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 1000000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/cpu.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 1000000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/alloc.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "konsume: 1000000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/alloc.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--bci",
+      "--norm",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/cpu-bci.collapsed"
+    ]
+  ],
+  "converted_at": "2026-11-18T23:07:09-0500"
 }
