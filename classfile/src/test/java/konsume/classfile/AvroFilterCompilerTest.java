@@ -148,6 +148,63 @@ public class AvroFilterCompilerTest {
         }
     }
 
+    @Test public void integerThresholdSpecializationPreservesDoubleRounding() throws Exception {
+        var schema = schema(List.of(AGE, COUNTRY));
+        long exact = 1L << 53;
+        var values = new ArrayList<Long>(List.of(Long.MIN_VALUE, Long.MAX_VALUE,
+            -exact - 2, -exact - 1, -exact, -exact + 1, -exact + 2,
+            exact - 2, exact - 1, exact, exact + 1, exact + 2,
+            -31L, -30L, -1L, 0L, 1L, 29L, 30L, 31L));
+        var random = new Random(73419);
+        for (int i = 0; i < 100; i++) values.add(random.nextLong());
+        double[] thresholds = {-0x1.0p63, -0x1.0p53 - 2, -0x1.0p53,
+            -0x1.0p53 + 1, -0x1.0p53 + 2, -30, -0.5, -0.0, 0.0, 0.5,
+            1, 30, 30.5, 0x1.0p53 - 2, 0x1.0p53 - 1, 0x1.0p53,
+            0x1.0p53 + 2, 0x1.0p63};
+        for (Comparison op : Comparison.values()) {
+            for (double threshold : thresholds) {
+                Filter expression = new NumberComparison("user.age", op, threshold);
+                var compiled = AvroFilterCompiler.compile(schema, expression);
+                for (long value : values) {
+                    var record = event(schema, value, "FR", 0);
+                    assertEquals(value + " " + op + " " + threshold,
+                        evaluate(expression, record), compiled.test(encode(record)));
+                }
+            }
+        }
+    }
+
+    @Test public void literalLoadsRespectEveryAlignmentAndSliceBoundary() throws Exception {
+        var schema = new Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"fields\":[" + COUNTRY + "]}");
+        var literals = new ArrayList<>(List.of("é", "€", "🐈", "ééé", "éééé", "a€🐈", "\u0000FR"));
+        for (int size = 0; size <= 40; size++) literals.add("x".repeat(size));
+        for (String literal : literals) {
+            var filter = AvroFilterCompiler.compile(schema, eq("country", literal));
+            var record = new GenericData.Record(schema);
+            record.put("country", literal);
+            byte[] payload = encode(record);
+            // All literals here use a one-byte Avro length; the bytes after it are the value.
+            assertTrue(payload.length <= 41);
+            for (int offset = 0; offset < 16; offset++) {
+                byte[] bytes = new byte[offset + payload.length + 16];
+                Arrays.fill(bytes, (byte) 0x55);
+                System.arraycopy(payload, 0, bytes, offset, payload.length);
+                assertTrue(filter.test(bytes, offset, payload.length));
+                for (int index = 1; index < payload.length; index++) {
+                    bytes[offset + index] ^= 1;
+                    assertFalse(filter.test(bytes, offset, payload.length));
+                    bytes[offset + index] ^= 1;
+                }
+                for (int length = 0; length < payload.length; length++) {
+                    final int start = offset, truncatedLength = length;
+                    // Matching bytes exist beyond the slice: they must never make this valid.
+                    assertThrows(MalformedAvroException.class,
+                        () -> filter.test(bytes, start, truncatedLength));
+                }
+            }
+        }
+    }
+
     @Test public void rejectedNumericConditionStillValidatesReferencedString() {
         var schema = new Schema.Parser().parse("{\"type\":\"record\",\"name\":\"R\",\"fields\":[" + AGE + "," + COUNTRY + "]}");
         var filter = AvroFilterCompiler.compile(schema, and(gt("age", 30), eq("country", "FR")));

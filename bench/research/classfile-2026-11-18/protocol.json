@@ -1,0 +1,13 @@
+{
+  "baseline_source_commit": "465d64a",
+  "scope": "Two independent production-code experiments: integer thresholds and packed short UTF-8 comparisons. Combine only if both merit follow-up.",
+  "benchmark": "konsume.bench.OptimizationBench.process",
+  "engine": "optimized",
+  "records_per_invocation": 300000000,
+  "screen": {"sizes": [10000], "forks": 3, "warmup": 6, "iterations": 5},
+  "confirmation": {"sizes": [10000, 100000, 1000000], "forks": 5, "warmup": 6, "iterations": 5},
+  "metric": {"name": "seconds_per_300m", "unit": "seconds", "direction": "minimize", "role": "objective", "min_repetitions": 3, "minimum_improvement": 0.02, "max_cv": 0.15},
+  "evaluator": {"repository": "https://github.com/sderosiaux/claudecode-autoresearch", "commit": "c5fca23f7beab20d4eed65d796747116e458c51c", "module": "product/autoresearch/measurement.py"},
+  "decision": "Screen each candidate separately against current optimized Java. Only promising candidates enter independent confirmation. Retain a candidate only for a resolved >=2% gain in the confirmation at 10k, with no resolved regression at either larger size. Unresolved larger-pool results remain explicitly inconclusive; do not claim equivalence.",
+  "controls": ["One JVM mean per independent sample", "Rotate version order every round and pool", "Identical committed benchmark and correctness tests across versions", "Run classfile and bench tests before measurement", "No builds, tests or other benchmarks during timing", "Each measured invocation must last at least one second", "Preserve raw results, source and revision hashes, commands, and discarded branches", "Profiling is separate from timing", "No remote publication"]
+}
