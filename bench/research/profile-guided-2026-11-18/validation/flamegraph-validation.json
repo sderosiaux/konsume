@@ -1,0 +1,7 @@
+{
+  "files": 10,
+  "javascript_syntax": "pass",
+  "canvas_present": "pass",
+  "browser_render": "not verified: plugin bootstrap failed",
+  "command": "Node vm.Script over each generated inline script; canvas markup assertion"
+}

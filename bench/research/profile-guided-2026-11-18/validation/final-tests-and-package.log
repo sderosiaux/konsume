@@ -1,0 +1,93 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/sbt-launch/1.12.6/sbt-launch-1.12.6.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.scalasbt.ipcsocket.NativeLoader in an unnamed module (file:/Users/sderosiaux/.sbt/boot/scala-2.12.21/org.scala-sbt/sbt/1.13.1/ipcsocket-1.8.1.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[info] welcome to sbt 1.13.1 (Eclipse Adoptium Java 25.0.3)
+[info] loading settings for project konsume-build from plugins.sbt...
+[info] loading project definition from /Users/sderosiaux/code/personal/konsume/project
+[info] loading settings for project root from build.sbt...
+[info] set current project to root (in build file:/Users/sderosiaux/code/personal/konsume/)
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/3.8.4/scala-library-3.8.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+Test run konsume.jq.JqDifferentialSuite started
+konsume.jq.JqDifferentialSuite: finished 1.823s
+Test run konsume.jq.JqDifferentialSuite finished: 0 failed, 0 ignored, 50 total 1.83s
+Test run konsume.format.JsonStagedSuite started
+konsume.format.JsonStagedSuite: finished 3.141s
+Test run konsume.format.JsonStagedSuite finished: 0 failed, 0 ignored, 4 total 3.141s
+Test run konsume.jq.ParserSuite started
+konsume.jq.ParserSuite: finished 0.002s
+Test run konsume.jq.ParserSuite finished: 0 failed, 0 ignored, 5 total 0.002s
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Test run konsume.format.AvroJsonSuite started
+konsume.format.AvroJsonSuite: finished 0.016s
+Test run konsume.format.AvroJsonSuite finished: 0 failed, 0 ignored, 3 total 0.016s
+Test run konsume.format.BytesPipelineSuite started
+konsume.format.BytesPipelineSuite: finished 0.072s
+Test run konsume.format.BytesPipelineSuite finished: 0 failed, 0 ignored, 8 total 0.072s
+Test run konsume.format.AvroStagedSuite started
+konsume.format.AvroStagedSuite: finished 3.438s
+Test run konsume.format.AvroStagedSuite finished: 0 failed, 0 ignored, 82 total 3.438s
+Test run konsume.jq.StagedSuite started
+konsume.jq.StagedSuite: finished 0.144s
+Test run konsume.jq.StagedSuite finished: 0 failed, 0 ignored, 52 total 0.144s
+[info] Passed: Total 204, Failed 0, Errors 0, Passed 204
+[success] Total time: 9 s, completed Nov 19, 2026, 12:03:31 AM
+[info] compiling 2 Java sources to /Users/sderosiaux/code/personal/konsume/classfile/target/classes ...
+[info] done compiling
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+[info] Passed: Total 13, Failed 0, Errors 0, Passed 13
+[success] Total time: 1 s, completed Nov 19, 2026, 12:03:32 AM
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/3.8.4/scala-library-3.8.4.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Test run konsume.bench.OptimizationSuite started
+konsume.bench.OptimizationSuite: finished 0.173s
+Test run konsume.bench.OptimizationSuite finished: 0 failed, 0 ignored, 6 total 0.182s
+Test run konsume.bench.ClassfileDifferentialSuite started
+konsume.bench.ClassfileDifferentialSuite: finished 1.211s
+Test run konsume.bench.ClassfileDifferentialSuite finished: 0 failed, 0 ignored, 6 total 1.211s
+Test run konsume.classfile.LengthDifferentialSuite started
+konsume.classfile.LengthDifferentialSuite: finished 0.017s
+Test run konsume.classfile.LengthDifferentialSuite finished: 0 failed, 0 ignored, 2 total 0.017s
+Test run konsume.bench.ScalingDataSuite started
+konsume.bench.ScalingDataSuite: finished 0.023s
+Test run konsume.bench.ScalingDataSuite finished: 0 failed, 0 ignored, 2 total 0.023s
+Test run konsume.bench.InvestigationSuite started
+konsume.bench.InvestigationSuite: finished 0.029s
+Test run konsume.bench.InvestigationSuite finished: 0 failed, 0 ignored, 13 total 0.029s
+Test run konsume.classfile.CursorDifferentialSuite started
+konsume.classfile.CursorDifferentialSuite: finished 0.024s
+Test run konsume.classfile.CursorDifferentialSuite finished: 0 failed, 0 ignored, 3 total 0.024s
+[info] Passed: Total 32, Failed 0, Errors 0, Passed 32
+[success] Total time: 2 s, completed Nov 19, 2026, 12:03:34 AM
+[success] Total time: 0 s, completed Nov 19, 2026, 12:03:34 AM
+[success] Total time: 0 s, completed Nov 19, 2026, 12:03:34 AM
+[info] Wrote /Users/sderosiaux/code/personal/konsume/classfile/target/konsume-classfile-0.1.0-SNAPSHOT.pom
+[success] Total time: 0 s, completed Nov 19, 2026, 12:03:34 AM
+[info] * Attributed(/Users/sderosiaux/code/personal/konsume/classfile/target/classes)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/avro/avro/1.12.1/avro-1.12.1.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.20.0/jackson-core-2.20.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.20.0/jackson-databind-2.20.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar)
+[info] * Attributed(/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar)
+[success] Total time: 0 s, completed Nov 19, 2026, 12:03:34 AM

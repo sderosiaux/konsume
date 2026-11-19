@@ -11,8 +11,8 @@ An independent [Java Class-File API prototype](classfile/README.md) implements t
 use case as an embeddable Java 24+ library. Its JAR has no Scala or JMH dependency; the separate
 benchmark module compares it with the staged Scala implementation.
 
-The [Java optimization experiments](bench/research/classfile-2026-11-18/README.md) preserve
-the measurement protocol, results and candidate patches, including unsuccessful attempts.
+The [Java optimization report](bench/research/profile-guided-2026-11-18/README.md) preserves
+CPU and allocation profiles, the measurement protocol, results and candidate branches.
 
 ```scala
 val pipeline = Pipeline

@@ -1,0 +1,161 @@
+{
+  "commit": "f6a9a2679bd4c154dc147210513674e442a2f7d0",
+  "profiler_sha256": "bf3f48291999c1d97ae7e7102bc75f458eec91f5e70f2c23c032c24f9a575c8b",
+  "profiler_version": "Async-profiler 4.6 built on Oct 12 2026",
+  "started_at": "2026-11-19T00:01:15-0500",
+  "commands": [
+    [
+      "java",
+      "-cp",
+      "/Users/sderosiaux/code/personal/konsume-experiments/selected/bench/target/scala-3.8.4/classes:/Users/sderosiaux/code/personal/konsume-experiments/selected/bench/target/scala-3.8.4/test-classes:/Users/sderosiaux/code/personal/konsume-experiments/selected/core/target/scala-3.8.4/classes:/Users/sderosiaux/code/personal/konsume-experiments/selected/classfile/target/classes:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.8.4/scala3-library_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-bytecode/1.37/jmh-generator-bytecode-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-reflection/1.37/jmh-generator-reflection-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/munit_3/1.2.4/munit_3-1.2.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-staging_3/3.8.4/scala3-staging_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.15/circe-core_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.15/circe-parser_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/avro/avro/1.12.1/avro-1.12.1.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/3.8.4/scala-library-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-asm/1.37/jmh-generator-asm-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/junit-interface/1.2.4/junit-interface-1.2.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/munit-diff_3/1.2.4/munit-diff_3-1.2.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.8.4/scala3-compiler_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.15/circe-numbers_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.13.0/cats-core_3-2.13.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.15/circe-jawn_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.20.0/jackson-core-2.20.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.20.0/jackson-databind-2.20.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/ow2/asm/asm/9.0/asm-9.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.8.4/scala3-interfaces-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.8.4/tasty-core_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-asm/9.9.0-scala-1/scala-asm-9.9.0-scala-1.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.10.7/compiler-interface-1.10.7.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.13.0/cats-kernel_3-2.13.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.6.0/jawn-parser_3-1.6.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/util-interface/1.10.7/util-interface-1.10.7.jar",
+      "org.openjdk.jmh.Main",
+      "-f",
+      "1",
+      "-wi",
+      "6",
+      "-i",
+      "5",
+      "-p",
+      "batchSize=10000",
+      "-p",
+      "engine=optimized",
+      "-prof",
+      "async:libPath=/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/lib/libasyncProfiler.dylib;event=cpu;alloc=1m;interval=1000000;output=jfr;dir=/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000;verbose=true",
+      "-jvmArgsAppend",
+      "-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints",
+      "-rf",
+      "json",
+      "-rff",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/jmh.json",
+      "konsume.bench.OptimizationBench.process"
+    ],
+    [
+      "java",
+      "-cp",
+      "/Users/sderosiaux/code/personal/konsume-experiments/selected/bench/target/scala-3.8.4/classes:/Users/sderosiaux/code/personal/konsume-experiments/selected/bench/target/scala-3.8.4/test-classes:/Users/sderosiaux/code/personal/konsume-experiments/selected/core/target/scala-3.8.4/classes:/Users/sderosiaux/code/personal/konsume-experiments/selected/classfile/target/classes:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.8.4/scala3-library_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-bytecode/1.37/jmh-generator-bytecode-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-reflection/1.37/jmh-generator-reflection-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/munit_3/1.2.4/munit_3-1.2.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-staging_3/3.8.4/scala3-staging_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-core_3/0.14.15/circe-core_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-parser_3/0.14.15/circe-parser_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/avro/avro/1.12.1/avro-1.12.1.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/3.8.4/scala-library-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-generator-asm/1.37/jmh-generator-asm-1.37.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/junit-interface/1.2.4/junit-interface-1.2.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/munit-diff_3/1.2.4/munit-diff_3-1.2.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-compiler_3/3.8.4/scala3-compiler_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-numbers_3/0.14.15/circe-numbers_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.13.0/cats-core_3-2.13.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/circe/circe-jawn_3/0.14.15/circe-jawn_3-0.14.15.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.20.0/jackson-core-2.20.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.20.0/jackson-databind-2.20.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/ow2/asm/asm/9.0/asm-9.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-interfaces/3.8.4/scala3-interfaces-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/tasty-core_3/3.8.4/tasty-core_3-3.8.4.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-asm/9.9.0-scala-1/scala-asm-9.9.0-scala-1.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.10.7/compiler-interface-1.10.7.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.13.0/cats-kernel_3-2.13.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/jawn-parser_3/1.6.0/jawn-parser_3-1.6.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.20/jackson-annotations-2.20.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-codec/commons-codec/1.19.0/commons-codec-1.19.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.jar:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/util-interface/1.10.7/util-interface-1.10.7.jar",
+      "org.openjdk.jmh.Main",
+      "-f",
+      "1",
+      "-wi",
+      "6",
+      "-i",
+      "5",
+      "-p",
+      "batchSize=1000000",
+      "-p",
+      "engine=optimized",
+      "-prof",
+      "async:libPath=/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/lib/libasyncProfiler.dylib;event=cpu;alloc=1m;interval=1000000;output=jfr;dir=/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000;verbose=true",
+      "-jvmArgsAppend",
+      "-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints",
+      "-rf",
+      "json",
+      "-rff",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/jmh.json",
+      "konsume.bench.OptimizationBench.process"
+    ]
+  ],
+  "conversion_commands": [
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 10000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/cpu.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 10000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/cpu.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 10000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/alloc.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 10000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/alloc.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--bci",
+      "--norm",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/cpu-bci.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 1000000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/cpu.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 1000000 records, cpu",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/cpu.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 1000000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/alloc.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--alloc",
+      "--total",
+      "--lines",
+      "--norm",
+      "--title",
+      "selected: 1000000 records, alloc",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/alloc.collapsed"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--bci",
+      "--norm",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/cpu-bci.collapsed"
+    ]
+  ],
+  "completed_at": "2026-11-19T00:02:03-0500"
+}

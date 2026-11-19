@@ -1,0 +1,5 @@
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Standalone Java consumer: PASS; no Scala, staging compiler, JMH or benchmark controls
+Packaged JAR: 26,090 bytes; Java 24 class version; Avro-only direct production dependency

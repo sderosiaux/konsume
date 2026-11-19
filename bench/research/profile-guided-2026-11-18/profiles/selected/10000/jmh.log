@@ -1,0 +1,119 @@
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.openjdk.jmh.profile.AsyncProfiler$JavaApi in an unnamed module (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[async-profiler] version=4.6
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[async-profiler] version=4.6
+# JMH version: 1.37
+# VM version: JDK 25.0.3, OpenJDK 64-Bit Server VM, 25.0.3+9-LTS
+# VM invoker: /Users/sderosiaux/.sdkman/candidates/java/25.0.3-tem/bin/java
+# VM options: -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 6 iterations, single-shot each
+# Measurement: 5 iterations, single-shot each
+# Timeout: 10 min per iteration
+# Threads: 1 thread
+# Benchmark mode: Single shot invocation time
+# Benchmark: konsume.bench.OptimizationBench.process
+# Parameters: (batchSize = 10000, engine = optimized)
+
+# Run progress: 0.00% complete, ETA 00:00:00
+# Fork: 1 of 1
+# Preparing profilers: AsyncProfiler 
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.openjdk.jmh.util.Utils (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Please consider reporting this to the maintainers of class org.openjdk.jmh.util.Utils
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by org.openjdk.jmh.profile.AsyncProfiler$JavaApi in an unnamed module (file:/Users/sderosiaux/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjdk/jmh/jmh-core/1.37/jmh-core-1.37.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[async-profiler] version=4.6
+# Warmup Iteration   1: [async-profiler] start,interval=1000000,alloc=1m,event=cpu,file=/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr
+SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Optimization: optimized, 10000 distinct records, 193331 payload bytes, 1521 retained/pass, 30000 passes = 300000000 records/invocation
+1.685 s/op
+# Warmup Iteration   2: 1.237 s/op
+# Warmup Iteration   3: 1.215 s/op
+# Warmup Iteration   4: 1.296 s/op
+# Warmup Iteration   5: 1.266 s/op
+# Warmup Iteration   6: 1.259 s/op
+Iteration   1: [async-profiler] stop
+[async-profiler] start,interval=1000000,alloc=1m,event=cpu,file=/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr
+1.288 s/op
+Iteration   2: 1.276 s/op
+Iteration   3: 1.304 s/op
+Iteration   4: 1.275 s/op
+Iteration   5: [async-profiler] stop
+1.279 s/op
+                 async: (text only)
+
+# Processing profiler results: AsyncProfiler 
+
+
+Result "konsume.bench.OptimizationBench.process":
+  N = 5
+  mean =      1.284 ±(99.9%) 0.047 s/op
+
+  Histogram, s/op:
+    [1.270, 1.273) = 0 
+    [1.273, 1.275) = 1 
+    [1.275, 1.278) = 1 
+    [1.278, 1.280) = 1 
+    [1.280, 1.283) = 0 
+    [1.283, 1.285) = 0 
+    [1.285, 1.288) = 0 
+    [1.288, 1.290) = 1 
+    [1.290, 1.293) = 0 
+    [1.293, 1.295) = 0 
+    [1.295, 1.298) = 0 
+    [1.298, 1.300) = 0 
+    [1.300, 1.303) = 0 
+    [1.303, 1.305) = 1 
+    [1.305, 1.308) = 0 
+    [1.308, 1.310) = 0 
+
+  Percentiles, s/op:
+      p(0.0000) =      1.275 s/op
+     p(50.0000) =      1.279 s/op
+     p(90.0000) =      1.304 s/op
+     p(95.0000) =      1.304 s/op
+     p(99.0000) =      1.304 s/op
+     p(99.9000) =      1.304 s/op
+     p(99.9900) =      1.304 s/op
+     p(99.9990) =      1.304 s/op
+     p(99.9999) =      1.304 s/op
+    p(100.0000) =      1.304 s/op
+
+Secondary result "konsume.bench.OptimizationBench.process:async":
+Async profiler results:
+  /Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr
+
+
+# Run complete. Total time: 00:00:14
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
+NOTE: Current JVM experimentally supports Compiler Blackholes, and they are in use. Please exercise
+extra caution when trusting the results, look into the generated code to check the benchmark still
+works, and factor in a small probability of new VM bugs. Additionally, while comparisons between
+different JVMs are already problematic, the performance difference caused by different Blackhole
+modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
+
+Benchmark                        (batchSize)   (engine)  Mode  Cnt  Score   Error  Units
+OptimizationBench.process              10000  optimized    ss    5  1.284 ± 0.047   s/op
+OptimizationBench.process:async        10000  optimized    ss         NaN            ---
+
+Benchmark result is saved to /Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/jmh.json

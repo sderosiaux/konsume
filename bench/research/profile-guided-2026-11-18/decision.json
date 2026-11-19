@@ -1,0 +1,100 @@
+{
+  "decision": "keep",
+  "status": "independently_confirmed_and_integrated",
+  "decided_at": "2026-11-19T00:04:52-0500",
+  "branch": "autoresearch/classfile-profiling-2026-11-18",
+  "integrated_source_commit": "2e6c6dd053f55867b168615a18bb8b0df7fafaab",
+  "baseline_commit": "1ec84000ad676da83938320ac8bf4d7ab3f280f7",
+  "candidate_commit": "f6a9a2679bd4c154dc147210513674e442a2f7d0",
+  "source_hashes_match_confirmed_candidate": true,
+  "protected_benchmark_hashes_match": true,
+  "hypotheses_retained": [
+    "One-byte nonnegative length decoding",
+    "Short UTF-8 string equality before a numeric range comparison, after full required-field validation"
+  ],
+  "hypotheses_not_retained": {
+    "fused-length": "Useful gain not resolved in screen",
+    "branchless": "Additional useful gain over simpler combination not resolved; more complexity"
+  },
+  "independent_confirmation": {
+    "jvms": 30,
+    "measured_invocations": 150,
+    "fresh_jvms_per_version_and_pool": 5,
+    "warmups_per_jvm": 6,
+    "records_per_invocation": 300000000,
+    "comparison": "confirmation/comparison.json",
+    "all_pools_resolve_useful_improvement": true,
+    "minimum_useful_improvement": 0.02
+  },
+  "evaluator": {
+    "repository": "https://github.com/sderosiaux/claudecode-autoresearch",
+    "commit": "c5fca23f7beab20d4eed65d796747116e458c51c",
+    "module": "product/autoresearch/measurement.py",
+    "sha256": "c6175003aa2984ebf51d062f51cead0289029ccc8920c5267666dd385f2eff0e",
+    "phase_tracking": "The evaluator comparison is stateless; this workflow establishes independent confirmation."
+  },
+  "per_pool": {
+    "10000": {
+      "baseline": 1.42396987996,
+      "candidate": 1.26295726168,
+      "improvement_fraction": 0.11307305059326321,
+      "gain_ci95": [
+        0.12542208727964965,
+        0.1966031492803504
+      ],
+      "resolved_improvement": true,
+      "resolved_regression": false
+    },
+    "100000": {
+      "baseline": 3.17145147324,
+      "candidate": 2.18574391832,
+      "improvement_fraction": 0.3108064440642338,
+      "gain_ci95": [
+        0.7577738276436676,
+        1.213641282196332
+      ],
+      "resolved_improvement": true,
+      "resolved_regression": false
+    },
+    "1000000": {
+      "baseline": 4.1622689584,
+      "candidate": 2.7914132983199997,
+      "improvement_fraction": 0.3293529740103497,
+      "gain_ci95": [
+        1.2458566071326889,
+        1.4958547130273123
+      ],
+      "resolved_improvement": true,
+      "resolved_regression": false
+    }
+  },
+  "distribution_guards": {
+    "comparison": "distributions/comparison.json",
+    "scope": "10k pool; mixed lengths, all-country-match, no-age-match",
+    "resolved_regressions": false,
+    "mixed_lengths_gain": "inconclusive; not evidence of equivalence"
+  },
+  "validation": {
+    "core_tests": 204,
+    "classfile_tests": 13,
+    "bench_tests": 32,
+    "total_tests": 249,
+    "standalone_java_consumer": "pass",
+    "jar_bytes": 26090,
+    "jar_sha256": "70727c51442032c49a2384abbdb36897a346d361ba68e7ae18f2c5b0b55cb808",
+    "class_version": 68,
+    "direct_production_dependencies": [
+      "org.apache.avro:avro:1.12.1"
+    ],
+    "log": "validation/final-tests-and-package.log"
+  },
+  "profiles": "profiles/",
+  "jit": "jit/summary.json",
+  "remote_published": false,
+  "limitations": [
+    "Local M4 Max/JDK 25 measurements; no affinity or exclusive machine",
+    "Measured filter age > 30 && country == FR; not a universal optimizer guarantee",
+    "CPU samples do not establish hardware cache-miss or branch-miss counts",
+    "Integrated browser rendering unavailable; generated HTML syntax validated"
+  ]
+}

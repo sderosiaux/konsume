@@ -42,6 +42,8 @@ The host application owns caching, eviction, schema-id dispatch and malformed-me
 - Numeric comparisons convert integers to doubles, matching the existing jq engine, including rounding above 2^53. This is not an exact int64 comparison API.
 - Needed fields are read once, in writer-schema order, into primitive locals. String equality compares UTF-8 bytes without creating Java strings.
 - Equality against literals of at most eight UTF-8 bytes emits constant length and byte comparisons. Longer literals retain the general array comparison. The reading plan and malformed-input checks are unchanged.
+- One-byte nonnegative lengths have a specialized integer decoding path; larger encodings retain the full long decoder and validation.
+- In a conjunction of a numeric range comparison followed by a string equality of at most eight UTF-8 bytes, the equality is evaluated first. All referenced fields are still read and validated before either comparison. Numeric equality/inequality and longer literals preserve the caller's order.
 - Unused fields before a needed field are skipped. Common scalar skips are emitted directly; complex unused values use a schema-driven skip helper (maximum nesting depth 128).
 - Missing paths, nullable/union paths and other referenced scalar types are rejected during compilation. No projection, transformation, JSON input, regex or general jq support is implemented in this prototype.
 
@@ -86,8 +88,13 @@ The Java tests compare against materialized Avro values across shuffled schema l
 
 The benchmark module alone depends on both Java and Scala implementations. Compilation benchmarks deliberately bypass the Scala cache so that they measure real generation, class loading and instantiation. Input parsing and schema construction are outside the timed region. Runtime benchmarks retain the exact same records into the same output buffer type.
 
-See the [restoration and optimization results](../bench/results/optimization/README.md) for the current
-Java implementation, controlled before/after measurements, JIT evidence and reproduction commands.
+See the [profile-guided autoresearch results](../bench/research/profile-guided-2026-11-18/README.md)
+for the current implementation, CPU/allocation flame graphs, independent before/after
+measurements and reproduction commands. On the measured filter, the latest changes
+reduce elapsed time by 11.3% to 32.9%, depending on pool size.
+
+The [restoration and optimization results](../bench/results/optimization/README.md) document
+the previous implementation and its earlier short-literal optimization.
 
 The [historical runtime investigation](../bench/results/investigation/README.md) records the earlier
 loading, warmup, decoder and JIT controls. The original Java decoder was slower; changing its varint

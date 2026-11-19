@@ -1,0 +1,100 @@
+[
+  {
+    "source": "selected.xml.gz",
+    "sha256": "7b1c499cbd4b43b32743ac442094964d710326ff1523bbc212a4e233f28e3453",
+    "c2_tasks": [
+      {
+        "method": "konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;",
+        "compile_id": "1852",
+        "compiled_at_seconds": 0.308,
+        "nmethod_size_bytes": 3480,
+        "inlining": [
+          {
+            "method": "konsume.Record.value",
+            "decision": "inline_success",
+            "reason": "accessor"
+          },
+          {
+            "method": "konsume.classfile.CompiledAvroFilter/0x00000ff00116cc00.test",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.<init>",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.readLength",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.skip",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.readLong",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.position",
+            "decision": "inline_success",
+            "reason": "accessor"
+          }
+        ],
+        "eliminated_allocations": [
+          "konsume.classfile.AvroCursor"
+        ]
+      },
+      {
+        "method": "konsume.bench.OptimizationBench javaBatch (Lkonsume/classfile/AvroFilter;)Lscala/collection/mutable/ArrayBuffer;",
+        "compile_id": "1845",
+        "compiled_at_seconds": 0.302,
+        "nmethod_size_bytes": 2768,
+        "inlining": [
+          {
+            "method": "konsume.Record.value",
+            "decision": "inline_success",
+            "reason": "accessor"
+          },
+          {
+            "method": "konsume.classfile.CompiledAvroFilter/0x00000ff00116cc00.test",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.<init>",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.readLength",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.skip",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.readLong",
+            "decision": "inline_success",
+            "reason": "inline (hot)"
+          },
+          {
+            "method": "konsume.classfile.AvroCursor.position",
+            "decision": "inline_success",
+            "reason": "accessor"
+          }
+        ],
+        "eliminated_allocations": [
+          "konsume.classfile.AvroCursor"
+        ]
+      }
+    ]
+  }
+]

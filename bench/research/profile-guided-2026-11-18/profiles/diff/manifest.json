@@ -1,0 +1,32 @@
+{
+  "commands": [
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--norm",
+      "--diff",
+      "--title",
+      "CPU: baseline to selected, 10000 records",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/10000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-10000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/diff/10000.html"
+    ],
+    [
+      "/Users/sderosiaux/code/personal/konsume-tools/async-profiler-4.6-macos/bin/jfrconv",
+      "--cpu",
+      "--norm",
+      "--diff",
+      "--title",
+      "CPU: baseline to selected, 1000000 records",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/baseline/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/selected/1000000/konsume.bench.OptimizationBench.process-SingleShotTime-batchSize-1000000-engine-optimized/jfr-cpu.jfr",
+      "/Users/sderosiaux/code/personal/konsume/bench/research/profile-guided-2026-11-18/profiles/diff/1000000.html"
+    ]
+  ],
+  "input_order": [
+    "baseline",
+    "selected"
+  ],
+  "line_numbers_omitted": "Source lines moved between versions; compare normalized method names instead.",
+  "created_at": "2026-11-19T00:02:49-0500"
+}

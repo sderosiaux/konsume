@@ -1,0 +1,245 @@
+{
+  "10000": {
+    "selected": {
+      "baseline": {
+        "valid": true,
+        "count": 5,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 1.42396987996,
+            "median": 1.416935483,
+            "min": 1.4042962834,
+            "max": 1.4485696584,
+            "stdev": 0.020709195466583587,
+            "cv": 0.014543281959844065,
+            "count": 5,
+            "ci95": [
+              1.3982508783959218,
+              1.4496888815240783
+            ],
+            "unit": "seconds",
+            "values": [
+              1.4042962834,
+              1.416935483,
+              1.4433485418,
+              1.4066994332,
+              1.4485696584
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 5,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 1.26295726168,
+            "median": 1.2649240082,
+            "min": 1.2504703418,
+            "max": 1.2715380416,
+            "stdev": 0.007948653533091331,
+            "cv": 0.0062936837011554475,
+            "count": 5,
+            "ci95": [
+              1.2530857322437279,
+              1.2728287911162721
+            ],
+            "unit": "seconds",
+            "values": [
+              1.2504703418,
+              1.2668784584,
+              1.2609754584,
+              1.2715380416,
+              1.2649240082
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 1.42396987996,
+          "candidate": 1.26295726168,
+          "improvement_fraction": 0.11307305059326321,
+          "gain_ci95": [
+            0.12542208727964965,
+            0.1966031492803504
+          ],
+          "resolved_improvement": true,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [],
+      "verdict": "promising",
+      "confirmation_required": true,
+      "tradeoff": false
+    }
+  },
+  "100000": {
+    "selected": {
+      "baseline": {
+        "valid": true,
+        "count": 5,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 3.17145147324,
+            "median": 3.1505452416,
+            "min": 3.0463660664,
+            "max": 3.4043502582,
+            "stdev": 0.14359294225417707,
+            "cv": 0.0452767269074688,
+            "count": 5,
+            "ci95": [
+              2.9931216529249163,
+              3.3497812935550835
+            ],
+            "unit": "seconds",
+            "values": [
+              3.4043502582,
+              3.1927050582,
+              3.1505452416,
+              3.0632907418,
+              3.0463660664
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 5,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 2.18574391832,
+            "median": 2.1845339002,
+            "min": 2.1410497752,
+            "max": 2.229802058,
+            "stdev": 0.03994155848574958,
+            "cv": 0.018273667903625848,
+            "count": 5,
+            "ci95": [
+              2.1361400113587514,
+              2.2353478252812486
+            ],
+            "unit": "seconds",
+            "values": [
+              2.1517423086,
+              2.1845339002,
+              2.2215915496,
+              2.229802058,
+              2.1410497752
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 3.17145147324,
+          "candidate": 2.18574391832,
+          "improvement_fraction": 0.3108064440642338,
+          "gain_ci95": [
+            0.7577738276436676,
+            1.213641282196332
+          ],
+          "resolved_improvement": true,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [],
+      "verdict": "promising",
+      "confirmation_required": true,
+      "tradeoff": false
+    }
+  },
+  "1000000": {
+    "selected": {
+      "baseline": {
+        "valid": true,
+        "count": 5,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 4.1622689584,
+            "median": 4.1663734666000005,
+            "min": 4.1023700834,
+            "max": 4.2266449748,
+            "stdev": 0.044909103790464776,
+            "cv": 0.010789572764112795,
+            "count": 5,
+            "ci95": [
+              4.1064957965457864,
+              4.218042120254214
+            ],
+            "unit": "seconds",
+            "values": [
+              4.1698418252,
+              4.146114442,
+              4.1023700834,
+              4.1663734666000005,
+              4.2266449748
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "candidate": {
+        "valid": true,
+        "count": 5,
+        "metrics": {
+          "seconds_per_300m": {
+            "mean": 2.7914132983199997,
+            "median": 2.7560982332,
+            "min": 2.74801605,
+            "max": 2.8611098916,
+            "stdev": 0.05574137496837029,
+            "cv": 0.0199688720412409,
+            "count": 5,
+            "ci95": [
+              2.722187407226902,
+              2.8606391894130976
+            ],
+            "unit": "seconds",
+            "values": [
+              2.74801605,
+              2.8428235668,
+              2.8611098916,
+              2.7560982332,
+              2.74901875
+            ],
+            "noise_exceeded": false
+          }
+        },
+        "reasons": [],
+        "method": "independent-run means; conservative Student-t 95% intervals v1"
+      },
+      "metrics": {
+        "seconds_per_300m": {
+          "baseline": 4.1622689584,
+          "candidate": 2.7914132983199997,
+          "improvement_fraction": 0.3293529740103497,
+          "gain_ci95": [
+            1.2458566071326889,
+            1.4958547130273123
+          ],
+          "resolved_improvement": true,
+          "resolved_regression": false
+        }
+      },
+      "reasons": [],
+      "verdict": "promising",
+      "confirmation_required": true,
+      "tradeoff": false
+    }
+  }
+}
