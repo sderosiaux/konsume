@@ -1,0 +1,5 @@
+# Preserve raw JMH output, diagnostic output and git-format-patch trailers verbatim.
+*.json -whitespace
+*.log -whitespace
+*.patch -whitespace
+jit/inlining.txt -whitespace

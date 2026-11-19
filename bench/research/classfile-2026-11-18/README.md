@@ -31,7 +31,7 @@ predeclared minimum useful improvement of 2%; neither resolves a regression eith
 There are **three independent JVMs per implementation**, with six warmup invocations
 and five measured invocations in each JVM. The evaluator receives one mean per JVM,
 not five supposedly independent samples. The campaign contains 45 timed invocations;
-their durations range from 1.3766 to 1.4974 seconds. Version order rotates across rounds.
+their durations range from 1.376597 to 1.497336 seconds. Version order rotates across rounds.
 Fork-mean coefficients of variation are 1.45%, 0.75% and 1.53%, respectively.
 
 Per-JVM means in execution rounds 1–3:
