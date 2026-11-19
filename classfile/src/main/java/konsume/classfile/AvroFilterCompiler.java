@@ -233,9 +233,17 @@ public final class AvroFilterCompiler {
             }
             case Filter.And f -> {
                 Label next = c.newLabel();
-                emitFilter(c, f.left(), values, literals, next, no);
+                Filter left = f.left(), right = f.right();
+                // Experimental heuristic: categorical equality before a numeric
+                // threshold. All referenced fields have already been validated;
+                // only the order of pure comparisons changes, never the reading plan.
+                if (left instanceof Filter.NumberComparison && right instanceof Filter.StringEquality) {
+                    left = f.right();
+                    right = f.left();
+                }
+                emitFilter(c, left, values, literals, next, no);
                 c.labelBinding(next);
-                emitFilter(c, f.right(), values, literals, yes, no);
+                emitFilter(c, right, values, literals, yes, no);
             }
             case Filter.Or f -> {
                 Label next = c.newLabel();
