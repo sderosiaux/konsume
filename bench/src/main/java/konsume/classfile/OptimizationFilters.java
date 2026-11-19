@@ -23,7 +23,7 @@ public final class OptimizationFilters {
         byte[][] literals;
         Schema[] schemas;
         if (variant.equals("literalOnly") || variant.equals("combined")) {
-            var g = AvroFilterCompiler.generate(schema, filter);
+            var g = LiteralBaselineAvroFilterCompiler.generate(schema, filter);
             bytes = replaceCursor(g.bytecode(), AvroCursor.class,
                 variant.equals("combined") ? EarlyReturnAvroCursor.class : RestoredAvroCursor.class);
             literals = g.literals(); schemas = g.schemas();
