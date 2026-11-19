@@ -38,6 +38,16 @@ final class AvroCursor {
     }
 
     int readLength() {
+        // Lengths are nonnegative. For a one-byte encoding, check the sign bit
+        // directly and decode with an int shift instead of the general long loop.
+        if (position == limit) throw new MalformedAvroException("Truncated varint");
+        int first = bytes[position] & 255;
+        if (first < 128) {
+            position++;
+            int n = first >>> 1;
+            if ((first & 1) != 0 || n > limit - position) throw new MalformedAvroException("Invalid byte length");
+            return n;
+        }
         long n = readLong();
         if (n < 0 || n > limit - position) throw new MalformedAvroException("Invalid byte length");
         return (int) n;
